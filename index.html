@@ -22,6 +22,11 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  
+  function recordOutboundLink(link, category, action) {
+    _gat._getTrackerByName()._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100);
+  }
 
 </script>
 </head>
@@ -75,8 +80,14 @@
             Latest pre-release (v0.1alpha) source code can be downloaded using below links:
             </p>
           <ul class="clearfix">
-            <li><a href="https://github.com/madlib/madlib/zipball/v0.1alpha"><img src="images/zip-icon.png" alt="zip" /></a></li>
-            <li><a href="https://github.com/madlib/madlib/tarball/v0.1alpha"><img src="images/tar-icon.png" alt="tar" /></a></li>
+            <li><a href="https://github.com/madlib/madlib/zipball/v0.1alpha" 
+                   onClick="recordOutboundLink(this, 'Download', 'zip');return false;">
+                   <img src="images/zip-icon.png" alt="zip" />
+                </a></li>
+            <li><a href="https://github.com/madlib/madlib/tarball/v0.1alpha"
+                   onClick="recordOutboundLink(this, 'Download', 'tar');return false;">
+                   <img src="images/tar-icon.png" alt="tar" />
+                </a></li>
           </ul>
           <h2>Documentation</h2>
           <p>Installation guide is available on
