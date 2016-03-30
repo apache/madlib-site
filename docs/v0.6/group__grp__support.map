@@ -1,0 +1,10 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__grp__sample.html" title="Random Sampling" alt="" coords="207,5,345,35"/>
+<area shape="rect" id="node2" href="$group__grp__svec.html" title="Sparse Vectors" alt="" coords="217,59,335,88"/>
+<area shape="rect" id="node3" href="$group__grp__prob.html" title="Probability Functions" alt="" coords="200,112,352,141"/>
+<area shape="rect" id="node4" href="$group__grp__array.html" title="Array Operations" alt="" coords="211,165,341,195"/>
+<area shape="rect" id="node6" href="$group__grp__compatibility.html" title="Compatibility" alt="" coords="224,219,328,248"/>
+<area shape="rect" id="node7" href="$group__grp__linalg.html" title="Linear&#45;Algebra Operations" alt="" coords="181,272,371,301"/>
+<area shape="rect" id="node8" href="$group__grp__cg.html" title="Conjugate Gradient" alt="" coords="204,325,348,355"/>
+<area shape="rect" id="node9" href="$group__grp__utilities.html" title="DB Administrator Utilities" alt="" coords="188,379,364,408"/>
+</map>

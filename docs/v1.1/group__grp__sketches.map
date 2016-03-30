@@ -1,0 +1,6 @@
+<map id="Sketch&#45;based Estimators" name="Sketch&#45;based Estimators">
+<area shape="rect" id="node1" href="$group__grp__fmsketch.html" title="FM (Flajolet&#45;Martin)" alt="" coords="524,5,663,35"/>
+<area shape="rect" id="node2" href="$group__grp__early__stage.html" title="Early Stage Development" alt="" coords="5,59,189,88"/>
+<area shape="rect" id="node3" href="$group__grp__countmin.html" title="CountMin (Cormode&#45;Muthukrishnan)" alt="" coords="468,59,719,88"/>
+<area shape="rect" id="node5" href="$group__grp__mfvsketch.html" title="MFV (Most Frequent\l Values)" alt="" coords="520,111,667,158"/>
+</map>

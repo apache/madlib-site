@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['l1norm',['l1norm',['../svec_8sql__in.html#a9e9b64c93b29c19adfb670f0171f14bf',1,'svec.sql_in']]],
+  ['l2norm',['l2norm',['../svec_8sql__in.html#a1b6bb42a5176b020aed12734df23aca9',1,'svec.sql_in']]],
+  ['laplace_5fcdf',['laplace_cdf',['../prob_8sql__in.html#a64e197de8da3761acdeec9db7e211703',1,'prob.sql_in']]],
+  ['laplace_5fpdf',['laplace_pdf',['../prob_8sql__in.html#a750278ad29d514793f76e159b773f410',1,'prob.sql_in']]],
+  ['laplace_5fquantile',['laplace_quantile',['../prob_8sql__in.html#a77f94fc43d4777fc4f68d18e29454a81',1,'prob.sql_in']]],
+  ['lincrf',['lincrf',['../crf_8sql__in.html#afb77a0c0a2cfacdfff33fb826ff1c0cd',1,'crf.sql_in']]],
+  ['linregr',['linregr',['../linear_8sql__in.html#a71d8295a18e93619b3331cefabe6e79b',1,'linear.sql_in']]],
+  ['lmf_5figd_5frun',['lmf_igd_run',['../lmf_8sql__in.html#ac1acb1f0e1f7008118f21c83546a4602',1,'lmf.sql_in']]],
+  ['logistic',['logistic',['../logistic_8sql__in.html#a4ded9be5c8b111dbb3109efaad83d69e',1,'logistic.sql_in']]],
+  ['logistic_5fcdf',['logistic_cdf',['../prob_8sql__in.html#a140f674876813d5e786a4d8ba8d75c87',1,'prob.sql_in']]],
+  ['logistic_5fpdf',['logistic_pdf',['../prob_8sql__in.html#afa38eb6c61d3c9825d5c172e6c17dbf7',1,'prob.sql_in']]],
+  ['logistic_5fquantile',['logistic_quantile',['../prob_8sql__in.html#a5a77a0bc5884af2a914a955174892ae2',1,'prob.sql_in']]],
+  ['lognormal_5fcdf',['lognormal_cdf',['../prob_8sql__in.html#a4c05b347f8feb64e1236d21b850af61e',1,'prob.sql_in']]],
+  ['lognormal_5fpdf',['lognormal_pdf',['../prob_8sql__in.html#a7370b797bf450f9aa54d4fea4d64d611',1,'prob.sql_in']]],
+  ['lognormal_5fquantile',['lognormal_quantile',['../prob_8sql__in.html#aab3a6de990ae5a81834274a1cf9cad8f',1,'prob.sql_in']]],
+  ['logregr_5faccuracy',['logregr_accuracy',['../cross__validation_8sql__in.html#a2d1571ffa794176a5dfed9d35e70fed7',1,'cross_validation.sql_in']]],
+  ['logregr_5fpredict',['logregr_predict',['../cross__validation_8sql__in.html#a66b3cb92a758ed6ea3b8da7c6dfa516c',1,'cross_validation.sql_in']]],
+  ['logregr_5ftrain',['logregr_train',['../logistic_8sql__in.html#a32880a39de2e36b6c6be72691a6a4a40',1,'logistic.sql_in']]],
+  ['lsvm_5fclassification',['lsvm_classification',['../online__sv_8sql__in.html#a75d126981ae4bf2e6641627501f0a2a5',1,'lsvm_classification(text input_table, text model_table, bool parallel):&#160;online_sv.sql_in'],['../online__sv_8sql__in.html#a50896def00d0e0950bec3d95b387e6b9',1,'lsvm_classification(text input_table, text model_table, bool parallel, bool verbose, float8 eta, float8 reg):&#160;online_sv.sql_in']]],
+  ['lsvm_5fpredict',['lsvm_predict',['../online__sv_8sql__in.html#a5fe084c8364c0657097410458f8ea1e9',1,'online_sv.sql_in']]],
+  ['lsvm_5fpredict_5fbatch',['lsvm_predict_batch',['../online__sv_8sql__in.html#a1c0a002f50250133c0ef1d3c43c6d338',1,'online_sv.sql_in']]],
+  ['lsvm_5fpredict_5fcombo',['lsvm_predict_combo',['../online__sv_8sql__in.html#a0ae9c50ca072757ff6493a8bf26dbc9c',1,'online_sv.sql_in']]]
+];

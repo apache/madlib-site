@@ -1,0 +1,8 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__grp__assoc__rules.html" title="Association Rules" alt="" coords="419,5,552,35"/>
+<area shape="rect" id="node2" href="$group__grp__modeling.html" title="Data Modeling" alt="" coords="5,112,117,141"/>
+<area shape="rect" id="node4" href="$group__grp__svdmf.html" title="SVD Matrix Factorisation" alt="" coords="399,59,572,88"/>
+<area shape="rect" id="node5" href="$group__grp__lda.html" title="Latent Dirichlet Allocation" alt="" coords="395,112,576,141"/>
+<area shape="rect" id="node6" href="$group__grp__kmeans.html" title="k&#45;Means Clustering" alt="" coords="415,165,556,195"/>
+<area shape="rect" id="node7" href="$group__grp__lmf.html" title="Low&#45;rank Matrix Factorization" alt="" coords="381,219,589,248"/>
+</map>

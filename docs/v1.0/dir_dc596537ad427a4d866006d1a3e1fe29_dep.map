@@ -1,0 +1,24 @@
+<map id="modules" name="modules">
+<area shape="rect" id="node4" href="dir_df86748cb94fb6c2fa09e991cce090c0.html" title="assoc_rules" alt="" coords="2027,65,2125,113"/>
+<area shape="rect" id="node5" href="dir_3ee26ceeadb429f807bd6cd822eca1b9.html" title="bayes" alt="" coords="1931,65,2003,113"/>
+<area shape="rect" id="node6" href="dir_7668ab45ab1521840e6e151e43539dd4.html" title="compatibility" alt="" coords="1805,65,1907,113"/>
+<area shape="rect" id="node7" href="dir_42e4eb27424bda9fbbfa95509de09bad.html" title="conjugate_gradient" alt="" coords="1637,65,1781,113"/>
+<area shape="rect" id="node8" href="dir_93c42bb4df0f3e1302223b6dfd48c81e.html" title="convex" alt="" coords="1541,65,1613,113"/>
+<area shape="rect" id="node9" href="dir_70e9abe17564e15776adcab8550c7667.html" title="crf" alt="" coords="1445,65,1517,113"/>
+<area shape="rect" id="node10" href="dir_b39ff06c8d4b923dddf798443565aaed.html" title="data_profile" alt="" coords="1325,65,1421,113"/>
+<area shape="rect" id="node11" href="dir_d662e943e8adcb86abe4b822d2348c9e.html" title="elastic_net" alt="" coords="1211,65,1301,113"/>
+<area shape="rect" id="node12" href="dir_73ccba3aa44ce35463f879b4ebbd3f46.html" title="kmeans" alt="" coords="1115,65,1187,113"/>
+<area shape="rect" id="node13" href="dir_6ff79b0655deb26abf8f86290b84a97c.html" title="lda" alt="" coords="1019,65,1091,113"/>
+<area shape="rect" id="node14" href="dir_9e42ee0a0235722f482630aa6cc99334.html" title="linalg" alt="" coords="923,65,995,113"/>
+<area shape="rect" id="node15" href="dir_8b8525adb4e4d2ae68fa3d70bbeff8da.html" title="prob" alt="" coords="827,65,899,113"/>
+<area shape="rect" id="node16" href="dir_68045f897311dcb3907add5fe80793a8.html" title="quantile" alt="" coords="731,65,803,113"/>
+<area shape="rect" id="node17" href="dir_ac52a4b89b7b1b1591f2952b5cbd041a.html" title="regress" alt="" coords="635,65,707,113"/>
+<area shape="rect" id="node18" href="dir_e6c126a997181663ba81c11cbf416bb1.html" title="sample" alt="" coords="539,65,611,113"/>
+<area shape="rect" id="node19" href="dir_505cd743a8a717435eca324f49291a46.html" title="stats" alt="" coords="443,65,515,113"/>
+<area shape="rect" id="node20" href="dir_5ff04c1d4b766f0a4dd68c6f19ed2092.html" title="summary" alt="" coords="336,65,419,113"/>
+<area shape="rect" id="node21" href="dir_40c4a35ef279220d890883d91e88ed32.html" title="svd_mf" alt="" coords="240,65,312,113"/>
+<area shape="rect" id="node22" href="dir_8d53e1c0026e7e34b4cd68f8b91426d6.html" title="utilities" alt="" coords="144,65,216,113"/>
+<area shape="rect" id="node23" href="dir_9f5e6edf0db58b0627c46b41dbbbb27f.html" title="validation" alt="" coords="37,65,120,113"/>
+<area shape="rect" id="graph3" href="dir_dc596537ad427a4d866006d1a3e1fe29.html" alt="" coords="27,55,2237,124"/>
+<area shape="rect" id="graph2" href="dir_a4a48839224ef8488facbffa8a397967.html" title="postgres" alt="" coords="16,16,2248,135"/>
+</map>

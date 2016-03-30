@@ -1,0 +1,12 @@
+<map id="Supervised Learning" name="Supervised Learning">
+<area shape="rect" id="node1" href="$group__grp__mlogreg.html" title="Multinomial Logistic\l Regression" alt="" coords="389,5,533,51"/>
+<area shape="rect" id="node2" href="$group__grp__cox__prop__hazards.html" title="Cox&#45;Proportional Hazards\l Regression" alt="" coords="369,74,553,121"/>
+<area shape="rect" id="node3" href="$group__grp__rf.html" title="Random Forest" alt="" coords="403,144,520,173"/>
+<area shape="rect" id="node4" href="$group__grp__modeling.html" title="Data Modeling" alt="" coords="5,251,117,280"/>
+<area shape="rect" id="node5" href="$group__grp__kernmach.html" title="Support Vector Machines" alt="" coords="372,197,551,227"/>
+<area shape="rect" id="node6" href="$group__grp__dectree.html" title="Decision Tree" alt="" coords="407,251,516,280"/>
+<area shape="rect" id="node7" href="$group__grp__bayes.html" title="Naive Bayes Classification" alt="" coords="367,304,556,333"/>
+<area shape="rect" id="node8" href="$group__grp__logreg.html" title="Logistic Regression" alt="" coords="389,357,533,387"/>
+<area shape="rect" id="node9" href="$group__grp__linreg.html" title="Linear Regression" alt="" coords="393,411,529,440"/>
+<area shape="rect" id="node11" href="$group__grp__crf.html" title="Conditional Random\l Field" alt="" coords="387,463,536,510"/>
+</map>

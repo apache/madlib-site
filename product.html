@@ -3,51 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=1100">
-	<title>Product |  MADlib</title>
-	<link rel="pingback" href="wordpress314/xmlrpc.php">
-	<script>
-		function supportsSVG(){if(document.createElementNS&&document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect){return true}}if(supportsSVG()){document.documentElement.className+=" svg"};
-	</script>
-	<script type="text/javascript" src="//use.typekit.net/qbv8hok.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<title>MADlib</title>
 
-	<link rel="shortcut icon" href="wordpress314/wp-content/themes/madlib/favicon.ico" />
-	<link rel="alternate" type="application/rss+xml" title="MADlib &raquo; Feed" href="wordpress314/feed/" />
-<link rel="alternate" type="application/rss+xml" title="MADlib &raquo; Comments Feed" href="wordpress314/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="MADlib &raquo; Product Comments Feed" href="wordpress314/product/feed/" />
-<link rel='stylesheet' id='style-css'  href='wordpress314/wp-content/themes/madlib/style.css' type='text/css' media='all' />
-<script type='text/javascript' src='wordpress314/wp-includes/js/l10n.js'></script>
-<script type='text/javascript' src='wordpress314/wp-includes/js/jquery/jquery.js'></script>
-<script>
-jQuery(document).ready(function () {
-  jQuery('#features-link').click(function () {
-        jQuery('.features-posts').show();
-        jQuery('.overview-tab').hide();
-        jQuery('.resources').hide();
-        jQuery('#menu-item-69').removeClass('current-menu-item');
-        jQuery('#menu-item-68').addClass('current-menu-item');
-  });
-  jQuery('#overview-link').click(function () {
-        jQuery('.features-posts').hide();
-        jQuery('.overview-tab').show();
-        jQuery('.resources').show();
-        jQuery('#menu-item-69').addClass('current-menu-item');
-        jQuery('#menu-item-68').removeClass('current-menu-item');
-  });
-});
-</script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="wordpress314/xmlrpc.php" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wordpress314/wp-includes/wlwmanifest.xml" /> 
-<link rel='index' title='MADlib' href='wordpress314/' />
-<link rel='prev' title='News' href='wordpress314/news/' />
-<link rel='next' title='Documentation' href='documentation.html' />
-<meta name="generator" content="WordPress 3.1.4" />
-<link rel='canonical' href='wordpress314/product/' />
+	<script src="https://use.typekit.net/qbv8hok.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<link rel='stylesheet' href='style.css' type='text/css' media='all' />
 
 	<script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
-<script type="text/javascript" src="wordpress314/wp-content/themes/madlib/_js/html5lightbox.js"></script>
-<script type='text/javascript' src='wordpress314/wp-content/themes/madlib/_js/master.js'></script>
+	<script type="text/javascript" src="html5lightbox.js"></script>
+	<script type='text/javascript' src='master.js'></script>
+
 </head>
 <body class="page page-id-15 page-template page-template-default">
 	<div class="header">
@@ -60,7 +28,7 @@ jQuery(document).ready(function () {
 					<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="product.html">Product</a></li>
 					<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a title="Documentation" href="documentation.html">Documentation</a></li>
 					<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="community.html">Community</a></li>
-					<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26 nav-button last"><a href="http://madlib.net/download/">Download pre-Apache releases</a></li>
+					<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26 nav-button last"><a href="download.html">Download</a></li>
 					</ul>
 				</div>
 			</div>
@@ -96,16 +64,16 @@ jQuery(document).ready(function () {
 </div>
 <div class="container overview-tab">
 <div class="row">
-<div class="span4 heading"><img class="watermark" src="wordpress314/wp-content/themes/madlib/_media/madlib-watermark.png" alt="" /></div>
+<div class="span4 heading"><img class="watermark" src="_media/madlib-watermark.png" alt="" /></div>
 <div class="span8">
-<p class="intro-text">In a world of ever increasing data sizes many existing analytics solutions are not up to the task. The MADlib project seeks to address this need by creating a framework built to take advantage of modern computing capabilities to provide robust solutions that scale with the needs of the business.</p>
+<p class="intro-text">In a world of ever increasing data sizes, many existing analytics solutions are not up to the task. The MADlib project seeks to address this need by creating a framework built to take advantage of modern computing capabilities to provide robust solutions that scale with the needs of the business.</p>
 <p class="intro-text">Our approach is to leverage the efforts of commercial practice, academic research, and open-source development to build a product that addresses the needs of the analytic challenges within modern business.</p>
 
 <h3>Key philosophies driving the architecture of MADlib are:</h3>
 <ul>
-	<li>Operate on the data locally—in database.  Do not move it between multiple runtime environments unnecessarily.</li>
+	<li>Operate on the data locally in-database.  Do not move data between multiple runtime environments unnecessarily.</li>
 	<li>Utilize best of breed database engines, but separate the machine learning logic from database specific implementation details.</li>
-	<li>Leverage MPP Share nothing technology, such as the Pivotal Greenplum Database, to provide parallelism and scalability.</li>
+	<li>Leverage MPP shared nothing technology, such as the Greenplum Database and Apache HAWQ (incubating), to provide parallelism and scalability.</li>
 	<li>Open implementation maintaining active ties into ongoing academic research.</li>
 </ul>
 </div>
@@ -115,20 +83,20 @@ jQuery(document).ready(function () {
 </div>
 <div class="resources gray video">
 <div class="container por"><a class="html5lightbox" href="http://www.youtube.com/watch?v=gI7-wqf6pAs">
-<img class="video-thumb" src="wordpress314/wp-content/themes/madlib/_media/video-thumb-madlib-project.jpg" alt="" />
+<img class="video-thumb" src="_media/video-thumb-madlib-project.jpg" alt="" />
 </a></div>
 </div>
 <div class="container features-posts">
 <div class="post-73 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/classification.png" alt="classification" width="96" height="117" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/classification.png" alt="classification" width="96" height="117" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Classification</h3>
-<p class="exerpt">When the desired output is categorical in nature we use classification methods to build a model that predicts which of the various categories a new result would fall into. The goal of classification is to be able to correctly label incoming records with the correct class for the record.</p>
-<p class="body"><strong>Example:</strong> If we had data that described various demographic data and other features of individuals applying for loans and we had historical data that included what past loans had defaulted, then we could build a model that described the likelihood that a new set of demographic data would result in a loan default. In this case the categories are “will default” or “won’t default” which are two discrete classes of output.</p>
+<p class="exerpt">When the desired output is categorical in nature, we use classification methods to build a model that predicts which of the various categories a new result would fall into. The goal of classification is to be able to correctly label incoming records with the correct class for the record.</p>
+<p class="body"><strong>Example:</strong> If we had data that described various demographic data and other features of individuals applying for loans, and we had historical data that included what past loans had defaulted, then we could build a model that described the likelihood that a new set of demographic data would result in a loan default. In this case, the categories are “will default” or “won’t default” which are two discrete classes of output.</p>
 &nbsp;
 
 </div>
@@ -139,14 +107,14 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-82 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/regression.png" alt="regression" width="96" height="115" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/regression.png" alt="regression" width="96" height="115" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Regression</h3>
-<p class="exerpt">When the desired output is continuous in nature we use regression methods to build a model that predicts the output value.</p>
-<p class="body"><strong>Example:</strong> If we had data that described properties of real estate listings then we could build a model to predict the sale value for homes based on the known characteristics of the houses. This is a regression because the output response is continuous in nature rather than categorical. (Ideally a link to a more developed use case here)</p>
+<p class="exerpt">When the desired output is continuous in nature, we use regression methods to build a model that predicts the output value.</p>
+<p class="body"><strong>Example:</strong> If we had data that described properties of real estate listings, then we could build a model to predict the sale value for homes based on the known characteristics of the houses. This is a regression problem because the output response is continuous in nature, rather than categorical.</p>
 &nbsp;
 
 </div>
@@ -157,14 +125,14 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-170 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/clustering.png" alt="clustering" width="96" height="115" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/clustering.png" alt="clustering" width="96" height="115" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Clustering</h3>
-<p class="exerpt">In which we are trying to identify groups of data such that the items within one cluster are more similar to each other than they are to the items in any other cluster.</p>
-<p class="body"><strong>Example:</strong> In customer segmentation analysis the goal is to identify specific groups of customers that behave in a similar fashion so that various marketing campaigns can be designed to reach these markets.   When the customer segments are known in advance this would be a supervised classification task, when we let the data itself identify the segments this is a clustering task.</p>
+<p class="exerpt">Here we are trying to identify groups of data such that the items within one cluster are more similar to each other than they are to the items in any other cluster.</p>
+<p class="body"><strong>Example:</strong> In customer segmentation analysis, the goal is to identify specific groups of customers that behave in a similar fashion, so that various marketing campaigns can be designed to reach these markets.   When the customer segments are known in advance this would be a supervised classification task. When we let the data itself identify the segments, this becomes a clustering task.</p>
 &nbsp;
 
 </div>
@@ -175,13 +143,13 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-186 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/topic-modelling.png" alt="topic-modelling" width="96" height="115" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/topic-modelling.png" alt="topic-modelling" width="96" height="115" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Topic Modeling</h3>
-<p class="exerpt">Topic modeling is similar to clustering in that it attempts to identify clusters of documents that are similar to each other, but it is more specialized in a text domain where it is also trying to identify the main themes of those documents.</p>
+<p class="exerpt">Topic modeling is similar to clustering in that it attempts to identify clusters of documents that are similar to each other, but it is more specific to the text domain where it is also trying to identify the main themes of those documents.</p>
 <p class="body">&nbsp;</p>
 
 </div>
@@ -192,14 +160,14 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-189 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/rule-mining.png" alt="rule-mining" width="96" height="118" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/rule-mining.png" alt="rule-mining" width="96" height="118" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Association Rule Mining</h3>
-<p class="exerpt">Also called market basket analysis or frequent itemset mining, this is attempting to identify which items tend to occur together more frequently than random chance would indicate suggesting an underlying relationship between the items.</p>
-<p class="body"><strong>Example:</strong> In an online web store association rule mining can be used to identify what products tend to be purchased together.  This can then be used as input into a product recommender engine to suggest items that may be of interest to the customer and provide upsell opportunities.</p>
+<p class="exerpt">Also called market basket analysis or frequent itemset mining, this is attempting to identify which items tend to occur together more frequently than random chance would indicate, suggesting an underlying relationship between the items.</p>
+<p class="body"><strong>Example:</strong> In an online web store, association rule mining can be used to identify what products tend to be purchased together.  This can then be used as input into a product recommendation engine to suggest items that may be of interest to the customer and provide upsell opportunities.</p>
 &nbsp;
 
 </div>
@@ -210,14 +178,14 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-191 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/descriptive-statistics.png" alt="descriptive-statistics" width="96" height="115" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/descriptive-statistics.png" alt="descriptive-statistics" width="96" height="115" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Descriptive Statistics</h3>
-<p class="exerpt">Descriptive statistics don&#8217;t provide a model and thus are not considered a learning method, but they can be helpful in providing information to an analyst to understand the underlying data and can provide valuable insights into the data that may influence choice of data model.</p>
-<p class="body"><strong>Example:</strong> Calculating the distribution of data within each variable of a dataset can help an analyst understand which variables should be treated as categorical variables and which as continuous variables as well as understanding what sort of distribution the values fall in.</p>
+<p class="exerpt">Descriptive statistics don&#8217;t provide a model and thus are not considered a learning method.  However, they can be helpful in providing information to an analyst to understand the underlying data, and can provide valuable insights into the data that may influence choice of data model.</p>
+<p class="body"><strong>Example:</strong> Calculating the distribution of data within each variable of a dataset can help an analyst understand which variables should be treated as categorical variables, and which should be treated as continuous variables, including the sort of distribution the values fall in.</p>
 &nbsp;
 
 </div>
@@ -228,13 +196,13 @@ jQuery(document).ready(function () {
 <div class="container features-posts">
 <div class="post-193 post type-post status-publish format-standard hentry category-feature row">
 <div class="span4">
-<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="wordpress314/wp-content/themes/madlib/_media/featured/validation.png" alt="validation" width="96" height="115" /></div>
+<div class="entry-thumbnail"><img class="attachment-post-thumbnail wp-post-image" src="_media/featured/validation.png" alt="validation" width="96" height="115" /></div>
 &nbsp;
 
 </div>
 <div class="span8">
 <h3>Validation</h3>
-<p class="exerpt">Using a model without understanding the accuracy of the model can lead to disastrous consequences.  For that reason it is important to understand the error of a model and to evaluate the model for accuracy on testing data.  Frequently in data analysis a separation is made between training data and testing data solely for the purpose of providing statistically valid analysis of the validity of the model and assessment that the model is not over-fitting the training data.  N-fold cross validation is also frequently utilized.</p>
+<p class="exerpt">Using a model without understanding the accuracy of that model can lead to a poor outcome.  For that reason, it is important to understand the error of a model and to evaluate the model for accuracy on test data.  Frequently in data analysis, a separation is made between training data and test data solely for the purpose of providing statistically valid analysis of the validity of the model, and assessment that the model is not over-fitting the training data.  N-fold cross validation is also frequently utilized.</p>
 <p class="body">&nbsp;</p>
 
 </div>
@@ -243,35 +211,19 @@ jQuery(document).ready(function () {
 </div>
 </div>
 </div>			</div>
-<div class="footer">
-        <div class="container">
- <img src='http://incubator.apache.org/images/egg-logo.png'/>
-    <br/>
-
-<p>MADlib is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the <a href="http://incubator.apache.org">Incubator</a>. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
-
-    <br/>
-    <p>
-      Copyright &copy; 2015 <a href='http://www.apache.org/'>The Apache Software Foundation</a>
-      <br>
-      Apache, Apache MADlib (incubating), the Apache feather and the MADlib logo are trademarks of The Apache Software Foundation
-    </p>
-
-        </div>
-</div>
-<script type='text/javascript' src='wordpress314/wp-content/themes/madlib/_js/master.js'></script>
-	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-45382226-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script');
-			ga.type = 'text/javascript';
-			ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+	<div class="footer">
+	  <div class="container">
+		 	<img src='http://incubator.apache.org/images/egg-logo.png'/>
+		  <br/>
+		  <br/>
+			<p>MADlib is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the <a href="http://incubator.apache.org">Incubator</a>. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
+		  <br/>
+	    <p>
+	      Copyright &copy; <script>	var d = new Date();document.write(d.getFullYear());</script> <a href='http://www.apache.org/'>The Apache Software Foundation</a>
+	      <br>
+	      Apache, Apache MADlib (incubating), the Apache feather and the MADlib logo are trademarks of The Apache Software Foundation
+	    </p>
+	  </div>
+	</div>
 </body>
 </html>

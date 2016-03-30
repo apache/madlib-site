@@ -1,0 +1,10 @@
+<map id="Generalized Linear Models" name="Generalized Linear Models">
+<area shape="rect" id="node1" href="$group__grp__mlogreg.html" title="Multinomial Logistic\l Regression" alt="" coords="219,5,363,51"/>
+<area shape="rect" id="node2" href="$group__grp__cox__prop__hazards.html" title="Cox&#45;Proportional Hazards\l Regression" alt="" coords="199,74,383,121"/>
+<area shape="rect" id="node3" href="$group__grp__robust.html" title="Huber White Variance" alt="" coords="211,144,371,173"/>
+<area shape="rect" id="node4" href="$group__grp__clustered__errors.html" title="Clustered Variance" alt="" coords="220,197,361,227"/>
+<area shape="rect" id="node5" href="$group__grp__marginal.html" title="Marginal Effects" alt="" coords="229,251,352,280"/>
+<area shape="rect" id="node6" href="$group__grp__logreg.html" title="Logistic Regression" alt="" coords="219,304,363,333"/>
+<area shape="rect" id="node7" href="$group__grp__elasticnet.html" title="Elastic Net Regularization" alt="" coords="200,357,381,387"/>
+<area shape="rect" id="node8" href="$group__grp__linreg.html" title="Linear Regression" alt="" coords="223,411,359,440"/>
+</map>

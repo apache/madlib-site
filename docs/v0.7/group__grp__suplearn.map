@@ -1,0 +1,15 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__grp__mlogreg.html" title="Multinomial Logistic Regression" alt="" coords="387,5,605,35"/>
+<area shape="rect" id="node2" href="$group__grp__cox__prop__hazards.html" title="Cox&#45;Proportional Hazards Regression" alt="" coords="367,59,625,88"/>
+<area shape="rect" id="node3" href="$group__grp__rf.html" title="Random Forest" alt="" coords="437,112,555,141"/>
+<area shape="rect" id="node4" href="$group__grp__modeling.html" title="Data Modeling" alt="" coords="5,299,117,328"/>
+<area shape="rect" id="node5" href="$group__grp__kernmach.html" title="Support Vector Machines" alt="" coords="407,165,585,195"/>
+<area shape="rect" id="node6" href="$group__grp__dectree.html" title="Decision Tree" alt="" coords="441,219,551,248"/>
+<area shape="rect" id="node7" href="$group__grp__bayes.html" title="Naive Bayes Classification" alt="" coords="401,272,591,301"/>
+<area shape="rect" id="node8" href="$group__grp__logreg.html" title="Logistic Regression" alt="" coords="424,325,568,355"/>
+<area shape="rect" id="node9" href="$group__grp__elasticnet.html" title="Elastic Net Regularization" alt="" coords="405,379,587,408"/>
+<area shape="rect" id="node10" href="$group__grp__validation.html" title="Cross Validation" alt="" coords="435,432,557,461"/>
+<area shape="rect" id="node11" href="$group__grp__linreg.html" title="Linear Regression" alt="" coords="428,485,564,515"/>
+<area shape="rect" id="node12" href="$group__grp__linear__svm.html" title="Linear Support Vector Machines" alt="" coords="385,539,607,568"/>
+<area shape="rect" id="node14" href="$group__grp__crf.html" title="Conditional Random Field" alt="" coords="404,592,588,621"/>
+</map>
