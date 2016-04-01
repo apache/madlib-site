@@ -1,2 +1,2 @@
-ErrorDocument 500 http://doc.madlib.net/latest
-ErrorDocument 404 http://doc.madlib.net/latest
+ErrorDocument 500 http://madlib.incubator.apache.org/docs/latest
+ErrorDocument 404 http://madlib.incubator.apache.org/docs/latest
