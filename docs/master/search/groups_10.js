@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['support_20vector_20machines',['Support Vector Machines',['../group__grp__kernmach.html',1,'']]],
-  ['sparse_20linear_20systems',['Sparse Linear Systems',['../group__grp__sparse__linear__solver.html',1,'']]],
-  ['statistics',['Statistics',['../group__grp__stats.html',1,'']]],
-  ['summary',['Summary',['../group__grp__summary.html',1,'']]],
-  ['supervised_20learning',['Supervised Learning',['../group__grp__super.html',1,'']]],
-  ['singular_20value_20decomposition',['Singular Value Decomposition',['../group__grp__svd.html',1,'']]],
-  ['sparse_20vectors',['Sparse Vectors',['../group__grp__svec.html',1,'']]]
+  ['text_20analysis',['Text Analysis',['../group__grp__text__analysis.html',1,'']]],
+  ['term_20frequency',['Term Frequency',['../group__grp__text__utilities.html',1,'']]],
+  ['topic_20modelling',['Topic Modelling',['../group__grp__topic__modelling.html',1,'']]],
+  ['tree_20methods',['Tree Methods',['../group__grp__tree.html',1,'']]],
+  ['time_20series_20analysis',['Time Series Analysis',['../group__grp__tsa.html',1,'']]]
 ];

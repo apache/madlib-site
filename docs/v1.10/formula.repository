@@ -1,0 +1,549 @@
+\form#0:\[ S (X) = \frac{Total X}{Total transactions} \]
+\form#1:\[ S (X \Rightarrow Y) = \frac{Total(X \cup Y)}{Total transactions} \]
+\form#2:$ X,Y $
+\form#3:$ X $
+\form#4:$ Y $
+\form#5:$ P(Y|X) $
+\form#6:\[ C (X \Rightarrow Y) = \frac{s(X \cap Y )}{s(X)} \]
+\form#7:\[ L (X \Rightarrow Y) = \frac{s(X \cap Y )}{s(X) \cdot s(Y)} \]
+\form#8:$ \neg Y $
+\form#9:$ X \Rightarrow Y $
+\form#10:\[ Conv (X \Rightarrow Y) = \frac{1 - S(Y)}{1 - C(X \Rightarrow Y)} \]
+\form#11:$ n $
+\form#12:$ n - 1 $
+\form#13:$ n \ge 2 $
+\form#14:$ A $
+\form#15:$ B $
+\form#16:$ B \Rightarrow (A - B) $
+\form#17:$ min(support) = .25 $
+\form#18:$ min(confidence) = .5 $
+\form#19:$ a_1, \dots, a_n $
+\form#20:$ c $
+\form#21:\[ P(C=c_i \mid A) \approx P(C=c_j \mid A) \]
+\form#22:$ P(A_i = a \mid C=c) $
+\form#23:\[ P(A_i=a \mid C=c) = \frac{1}{\sqrt{2\pi\sigma^{2}_c}}exp\left(-\frac{(a-\mu_c)^{2}}{2\sigma^{2}_c}\right) \]
+\form#24:$\mu_c$
+\form#25:$\sigma^{2}_c$
+\form#26:$c$
+\form#27:\[ \Pr(C = c \mid A_1 = a_1, \dots, A_n = a_n) = \frac{\Pr(C = c) \cdot \Pr(A_1 = a_1, \dots, A_n = a_n \mid C = c)} {\Pr(A_1 = a_1, \dots, A_n = a_n)} \,, \]
+\form#28:\[ \Pr(A_1 = a_1, \dots, A_n = a_n \mid C = c) = \prod_{i=1}^n \Pr(A_i = a_i \mid C = c) \,. \]
+\form#29:\[ \text{classify}(a_1, ..., a_n) = \arg\max_c \left\{ \Pr(C = c) \cdot \prod_{i=1}^n \Pr(A_i = a_i \mid C = c) \right\} \]
+\form#30:$ P(A_i = a \mid C = c) $
+\form#31:\[ P(A_i = a \mid C = c) = \frac{\#(c,i,a)}{\#c} \]
+\form#32:$ \#(c,i,a) $
+\form#33:$ i $
+\form#34:$ a $
+\form#35:$ \#c $
+\form#36:\[ P(A_i = a \mid C = c) = \frac{\#(c,i,a) + s}{\#c + s \cdot \#i} \]
+\form#37:$ \#i $
+\form#38:$ s \geq 0 $
+\form#39:$ s = 1 $
+\form#40:$ s = 0 $
+\form#41:$ \boldsymbol Ax = \boldsymbol b $
+\form#42:$A$
+\form#43:$x$
+\form#44:$ \boldsymbol b $
+\form#45:\[ \boldsymbol Ax = \boldsymbol b \]
+\form#46:$ \boldsymbol A $
+\form#47:\[ \|\boldsymbol A - \boldsymbol UV^{T} \|_2 \]
+\form#48:$rank(\boldsymbol UV^{T}) \leq r$
+\form#49:$\|\cdot\|_2$
+\form#50:$m \times n$
+\form#51:$U$
+\form#52:$m \times r$
+\form#53:$V$
+\form#54:$n \times r$
+\form#55:$1 \leq r \ll \min(m, n)$
+\form#56:$ \Pr( \text{best label sequence} \mid \text{sequence}) $
+\form#57:\[ p_\lambda(\boldsymbol y | \boldsymbol x) = \frac{\exp{\sum_{m=1}^M \lambda_m F_m(\boldsymbol x, \boldsymbol y)}}{Z_\lambda(\boldsymbol x)} \,. \]
+\form#58:$ F_m(\boldsymbol x, \boldsymbol y) = \sum_{i=1}^n f_m(y_i,y_{i-1},x_i) $
+\form#59:$ \boldsymbol x $
+\form#60:$ f_m(y_i,y_{i-1},x_i) $
+\form#61:$ y_i $
+\form#62:$ y_{i-1} $
+\form#63:$ x_i $
+\form#64:$ \lambda_m $
+\form#65:$ Z_\lambda(\boldsymbol x) $
+\form#66:\[ Z_\lambda(\boldsymbol x) = \sum_{\boldsymbol y'} \exp{\sum_{m=1}^M \lambda_m F_m(\boldsymbol x, \boldsymbol y')} \]
+\form#67:$ T=\{(x_k,y_k)\}_{k=1}^N $
+\form#68:\[ \ell_{\lambda}=\sum_k \log p_\lambda(y_k|x_k) =\sum_k[\sum_{m=1}^M \lambda_m F_m(x_k,y_k) - \log Z_\lambda(x_k)] \]
+\form#69:\[ \nabla \ell_{\lambda}=\sum_k[F(x_k,y_k)-E_{p_\lambda(Y|x_k)}[F(x_k,Y)]] \]
+\form#70:$E_{p_\lambda(Y|x)}[F(x,Y)]$
+\form#71:\[ E_{p_\lambda(Y|x)}[F(x,Y)] = \sum_y p_\lambda(y|x)F(x,y) = \sum_i\frac{\alpha_{i-1}(f_i*M_i)\beta_i^T}{Z_\lambda(x)} \]
+\form#72:\[ Z_\lambda(x) = \alpha_n.1^T \]
+\form#73:$\alpha_i$
+\form#74:$ \beta_i$
+\form#75:\[ \alpha_i = \begin{cases} \alpha_{i-1}M_i, & 0<i<=n\\ 1, & i=0 \end{cases}\\ \]
+\form#76:\[ \beta_i^T = \begin{cases} M_{i+1}\beta_{i+1}^T, & 1<=i<n\\ 1, & i=n \end{cases} \]
+\form#77:\[ \ell_{\lambda}^\prime=\sum_k[\sum_{m=1}^M \lambda_m F_m(x_k,y_k) - \log Z_\lambda(x_k)] - \frac{\lVert \lambda \rVert^2}{2\sigma ^2} \]
+\form#78:\[ \nabla \ell_{\lambda}^\prime=\sum_k[F(x_k,y_k) - E_{p_\lambda(Y|x_k)}[F(x_k,Y)]] - \frac{\lambda}{\sigma ^2} \]
+\form#79:$ \boldsymbol c $
+\form#80:$ l(\boldsymbol c) $
+\form#81:$ n^2 $
+\form#82:\[\min_{w \in R^N} L(w) + \lambda \left(\frac{(1-\alpha)}{2} \|w\|_2^2 + \alpha \|w\|_1 \right)\]
+\form#83:$L$
+\form#84:$ \alpha \in [0,1] $
+\form#85:$ lambda \geq 0 $
+\form#86:$alpha = 0$
+\form#87:$\alpha = 1$
+\form#88:\[L(\vec{w}) = \frac{1}{2}\left[\frac{1}{M} \sum_{m=1}^M (w^{t} x_m + w_{0} - y_m)^2 \right] \]
+\form#89:\[ L(\vec{w}) = \sum_{m=1}^M\left[y_m \log\left(1 + e^{-(w_0 + \vec{w}\cdot\vec{x}_m)}\right) + (1-y_m) \log\left(1 + e^{w_0 + \vec{w}\cdot\vec{x}_m}\right)\right]\ , \]
+\form#90:$y_m \in {0,1}$
+\form#91:\[ x' \leftarrow \frac{x - \bar{x}}{\sigma_x} \]
+\form#92:\[y' \leftarrow y - \bar{y} \]
+\form#93:$ l(\boldsymbol \beta) $
+\form#94:$ Y \in \{ 0,1,2 \ldots k \} $
+\form#95:\[ E[Y \mid \boldsymbol x] = \sigma(\boldsymbol c^T \boldsymbol x) \]
+\form#96:$ \sigma(x) = \frac{1}{1 + \exp(-x)} $
+\form#97:$ \boldsymbol y \in \{ 0,1 \}^{n \times k} $
+\form#98:$ k $
+\form#99:$ X \in \mathbf R^{n \times k} $
+\form#100:$ \boldsymbol x_i $
+\form#101:\[ P[Y = y_i | \boldsymbol x_i] = \sigma((-1)^{y_i} \cdot \boldsymbol c^T \boldsymbol x_i) \,. \]
+\form#102:$ \prod_{i=1}^n \Pr(Y = y_i \mid \boldsymbol x_i) $
+\form#103:$ \sum_{i=1}^n \log \Pr(Y = y_i \mid \boldsymbol x_i) $
+\form#104:\[ l(\boldsymbol c) = -\sum_{i=1}^n \log(1 + \exp((-1)^{y_i} \cdot \boldsymbol c^T \boldsymbol x_i)) \,. \]
+\form#105:$ H = -X^T A X $
+\form#106:$ A = \text{diag}(a_1, \dots, a_n) $
+\form#107:$ a_i = \sigma(\boldsymbol c^T \boldsymbol x) \cdot \sigma(-\boldsymbol c^T \boldsymbol x) \,. $
+\form#108:$ H $
+\form#109:\[ \mathit{se}(c_i) = \left( (X^T A X)^{-1} \right)_{ii} \,. \]
+\form#110:\[ z_i = \frac{c_i}{\mathit{se}(c_i)} \,. \]
+\form#111:$ p $
+\form#112:$ c_i = 0 $
+\form#113:$ F $
+\form#114:\[ p_i = \Pr(|Z| \geq |z_i|) = 2 \cdot (1 - F( |z_i| )) \]
+\form#115:$ Z $
+\form#116:$ \exp(c_i) $
+\form#117:$ \kappa(X^T A X) $
+\form#118:$ K $
+\form#119:$ (1, ..., K) $
+\form#120:$ J $
+\form#121:$ (0, ..., J-1) $
+\form#122:$ {m_{k,j}} $
+\form#123:$ j $
+\form#124:$ {m_{k_1, j_0}, m_{k_1, j_1} \ldots m_{k_1, j_{J-1}}, m_{k_2, j_0}, m_{k_2, j_1}, \ldots m_{k_2, j_{J-1}} \ldots m_{k_K, j_{J-1}}} $
+\form#125:$ Y_i $
+\form#126:$ j = 1,.. , J$
+\form#127:$\pi$
+\form#128:$\pi_{ij}$
+\form#129:$i$
+\form#130:$j$
+\form#131:\[ \gamma_{ij} = \Pr(Y_i \le j)= \pi_{i1} +...+ \pi_{ij} . \]
+\form#132:$ \mbox{logit}(\pi) = \log[\pi/(1-\pi)] $
+\form#133:\[ \mbox{logit}(\gamma_{ij})=\mbox{logit}(\Pr(Y_i \le j))=\log \frac{\Pr(Y_i \le j)}{1-\Pr(Y_i\le j)}, j=1,...,J−1 \]
+\form#134:\[ \mbox{logit}(\gamma_{ij}) = \theta_j - x^T_i \beta \]
+\form#135:$x_i$
+\form#136:$\beta$
+\form#137:$\{\theta_j\}$
+\form#138:$x^T_i\beta$
+\form#139:$ x_1, \dots, x_n \in \mathbb R^d $
+\form#140:$ c_1, \dots, c_k \in \mathbb R^d $
+\form#141:\[ (c_1, \dots, c_k) \mapsto \sum_{i=1}^n \min_{j=1}^k \operatorname{dist}(x_i, c_j) \]
+\form#142:$ \operatorname{dist} $
+\form#143:$ \alpha $
+\form#144:$ \beta $
+\form#145:$ \phi_i $
+\form#146:$ \theta $
+\form#147:$\alpha$
+\form#148:$ z_n $
+\form#149:$ w_n $
+\form#150:$ \phi_{z_n} $
+\form#151:$\|\vec{a}\|_1$
+\form#152:$\|\vec{a}\|_2$
+\form#153:$\|\vec{a} - \vec{b}\|_1$
+\form#154:$\|\vec{a} - \vec{b}\|_2$
+\form#155:$\|\vec{a} - \vec{b}\|_p, p > 0$
+\form#156:$\|\vec{a} - \vec{b}\|_\infty$
+\form#157:$\|\vec{a} - \vec{b}\|_2^2$
+\form#158:$\frac{\vec{a} \cdot \vec{b}}{\|\vec{a}\|_2 \|\vec{b}\|_2}$
+\form#159:$\cos^{-1}(\frac{\vec{a} \cdot \vec{b}}{\|\vec{a}\|_2 \|\vec{b}\|_2})$
+\form#160:$ \vec x = (x_1, \dots, x_n) $
+\form#161:$ \| x \|_1 = \sum_{i=1}^n |x_i| $
+\form#162:$ \| x \|_2 = \sqrt{\sum_{i=1}^n x_i^2} $
+\form#163:$ \vec y = (y_1, \dots, y_n) $
+\form#164:$ \| x - y \|_\infty = \max_{i=1}^n \|x_i - y_i\| $
+\form#165:$ p > 0 $
+\form#166:$ \| x - y \|_p = (\sum_{i=1}^n \|x_i - y_i\|^p)^{\frac{1}{p}} $
+\form#167:$ \| x - y \|_1 = \sum_{i=1}^n |x_i - y_i| $
+\form#168:$ \| x - y \|_2 = \sqrt{\sum_{i=1}^n (x_i - y_i)^2} $
+\form#169:$ \frac{\langle \vec x, \vec y \rangle} {\| \vec x \| \cdot \| \vec y \|} $
+\form#170:$ \| x - y \|_2^2 = \sum_{i=1}^n (x_i - y_i)^2 $
+\form#171:$ \arccos\left(\frac{\langle \vec x, \vec y \rangle} {\| \vec x \| \cdot \| \vec y \|}\right) $
+\form#172:$ 1 - \frac{\langle \vec x, \vec y \rangle} {\| \vec x \|^2 \cdot \| \vec y \|^2 - \langle \vec x, \vec y \rangle} $
+\form#173:$ \vec x = (x_1, \dots, x_m) $
+\form#174:$ 1 - \frac{|x \cap y|}{|x \cup y|} $
+\form#175:$ M $
+\form#176:$ \vec x $
+\form#177:$ M = (\vec{m_0} \dots \vec{m_{l-1}}) \in \mathbb{R}^{k \times l} $
+\form#178:$ \vec x \in \mathbb R^k $
+\form#179:$ x $
+\form#180:$ \arg\min_{i=0,\dots,l-1} \operatorname{dist}(\vec{m_i}, \vec x) $
+\form#181:$ \min_{i=0,\dots,l-1} \operatorname{dist}(\vec{m_i}, \vec x) $
+\form#182:$ \operatorname{dist}(\vec{m_j}, \vec x) $
+\form#183:$ j = $
+\form#184:$ x_1, \dots, x_n $
+\form#185:$ \frac 1n \sum_{i=1}^n x_i $
+\form#186:$ \widetilde{x} := \frac 1n \sum_{i=1}^n \frac{x_i}{\| x_i \|} $
+\form#187:$ \frac{\widetilde{x}}{\| \widetilde{x} \|} $
+\form#188:$ \vec x_1, \dots, \vec x_n \in \mathbb R^m $
+\form#189:$ ( \vec x_1 \dots \vec x_n ) \in \mathbb R^{m \times n}$
+\form#190:$ PA = LDL* $
+\form#191:$ A = QR $
+\form#192:$ PAQ = LU $
+\form#193:$mxn$
+\form#194:$m \ge n$
+\form#195:\[ A = U \Sigma V^T, \]
+\form#196:$\Sigma$
+\form#197:$n \times n$
+\form#198:$ \sqrt{mean((X - USV^T)_{ij}^2)} $
+\form#199:$ \sqrt{mean(X_{ij}^2)} $
+\form#200:$\sigma_i, u_i, v_i$
+\form#201:$A^TA$
+\form#202:$AA^T$
+\form#203:\[ H(A) = \begin{bmatrix} 0 & A\\ A^* & 0 \end{bmatrix} \]
+\form#204:\[ A = P B Q^T, \]
+\form#205:$P$
+\form#206:$Q$
+\form#207:$B$
+\form#208:$B*B$
+\form#209:$A*A$
+\form#210:\[ B = X\Sigma Y^T, \]
+\form#211:$U = PX$
+\form#212:$V = QY$
+\form#213:\[ Ax = b \]
+\form#214:$x \in \mathbb{R}^{n}$
+\form#215:$A \in \mathbb{R}^{m \times n} $
+\form#216:$b \in \mathbb{R}^{m}$
+\form#217:$ \frac{|Ax - b|}{|b|} $
+\form#218:$ 0 \ldots n-1 $
+\form#219:$b$
+\form#220:$ N $
+\form#221:$ \boldsymbol X $
+\form#222:$ \hat{x} $
+\form#223:$ \boldsymbol{X}$
+\form#224:$ \hat{\boldsymbol X} $
+\form#225:\[ \hat{\boldsymbol X} = {\boldsymbol X} - \vec{e} \hat{x}^T \]
+\form#226:$ \vec{e} $
+\form#227:\[ \hat{\boldsymbol X} = {\boldsymbol U}{\boldsymbol \Sigma}{\boldsymbol V}^T \]
+\form#228:$ {\boldsymbol \Sigma} $
+\form#229:$ {\boldsymbol \Sigma}/(\sqrt{(N-1)} $
+\form#230:$ {\boldsymbol V} $
+\form#231:$ \boldsymbol P $
+\form#232:$ {\boldsymbol X}' $
+\form#233:\begin{align*} {\boldsymbol {\hat{X}}} & = {\boldsymbol X} - \vec{e} \hat{x}^T \\ {\boldsymbol X}' & = {\boldsymbol {\hat {X}}} {\boldsymbol P}. \end{align*}
+\form#234:$\hat{x} $
+\form#235:$ \boldsymbol R $
+\form#236:\[ {\boldsymbol R} = {\boldsymbol {\hat{X}}} - {\boldsymbol X}' {\boldsymbol P}^T. \]
+\form#237:$ r $
+\form#238:\[ r = \|{\boldsymbol R}\|_F \]
+\form#239:$ \|\cdot\|_F $
+\form#240:$ r' $
+\form#241:\[ r' = \frac{ \|{\boldsymbol R}\|_F }{\|{\boldsymbol X}\|_F } \]
+\form#242:$ p \in [0,1] $
+\form#243:$ F(x) = p $
+\form#244:$ \sup \{ x \in D \mid F(x) \leq p \} $
+\form#245:$ p < 0.5 $
+\form#246:$ \inf \{ x \in D \mid F(x) \geq p \} $
+\form#247:$ p \geq 0.5 $
+\form#248:$ D $
+\form#249:$ \mathbb R $
+\form#250:$ \mathbb N_0 $
+\form#251:$ x \in \mathbb N_0 $
+\form#252:$ F(x) < p < F(x + 1) $
+\form#253:$ x + 1 $
+\form#254:$ p < F(0) $
+\form#255:$p$
+\form#256:$ 1 - p $
+\form#257:$ > x $
+\form#258:$ \leq x $
+\form#259:$ \Pr[X \leq x] $
+\form#260:$ \mathit{sp} $
+\form#261:$ \mathit{sp} \in [0,1] $
+\form#262:$ f(x) $
+\form#263:$ f $
+\form#264:$ p \leq 1 - \mathit{sp} $
+\form#265:$ \alpha > 0 $
+\form#266:$ \beta > 0 $
+\form#267:$ p = \Pr[X \leq x] $
+\form#268:$ n \in \mathbb N_0 $
+\form#269:$ p \geq \Pr[X \leq x] $
+\form#270:$ p \leq \Pr[X \leq x] $
+\form#271:$ x_0 $
+\form#272:$ \gamma > 0 $
+\form#273:$ \gamma $
+\form#274:$ \nu > 0 $
+\form#275:$ \nu $
+\form#276:$ \mu > 0 $
+\form#277:$ \lambda > 0 $
+\form#278:$ \lambda $
+\form#279:$ \nu_1 > 0 $
+\form#280:$ \nu_1 $
+\form#281:$ \nu_2 $
+\form#282:$ k > 0 $
+\form#283:$ \theta > 0 $
+\form#284:$ r \in \{ 0, 1, \dots, N \} $
+\form#285:$ n \in \{ 0, 1, \dots, N \} $
+\form#286:$ N \in \mathbb N $
+\form#287:$ r, n, N $
+\form#288:$ \mu $
+\form#289:$ b > 0 $
+\form#290:$ 2 b^2 $
+\form#291:$ s > 0 $
+\form#292:$ s $
+\form#293:$ m $
+\form#294:$ r > 0 $
+\form#295:$ x + r $
+\form#296:$ \mathit{sp} \in (0,1] $
+\form#297:$ r, \mathit{sp} $
+\form#298:$ \delta \geq 0 $
+\form#299:$ shape_1 $
+\form#300:$ shape_2 $
+\form#301:$ \delta $
+\form#302:$ \lambda \geq 0 $
+\form#303:$ \nu_1, \nu_2, \lambda $
+\form#304:$ \sigma > 0 $
+\form#305:$ T $
+\form#306:$ \sigma^2 $
+\form#307:$ \sigma $
+\form#308:$ c \geq a $
+\form#309:$ b \geq c $
+\form#310:$ b > a $
+\form#311:$ a, b, c $
+\form#312:$ b $
+\form#313:$ [a, b] $
+\form#314:$m$
+\form#315:\[ S(\vec{c}) = B(\vec{c}) M(\vec{c}) B(\vec{c}) \]
+\form#316:\begin{eqnarray} B(\vec{c}) & = & \left(-\sum_{i=1}^{n} H(y_i, \vec{x}_i, \vec{c})\right)^{-1}\\ & = & \left(-\sum_{i=1}^{n}\frac{\partial^2 l(y_i, \vec{x}_i, \vec{c})}{\partial c_\alpha \partial c_\beta}\right)^{-1} \end{eqnarray}
+\form#317:$H$
+\form#318:\[ L(\vec{c}) = \sum_{i=1}^n l(y_i, \vec{x}_i, \vec{c})\ . \]
+\form#319:\[ M(\vec{c}) = \bf{A}^T\bf{A} \]
+\form#320:$\bf{A}$
+\form#321:\[ A_m = \sum_{i\in G_m}\frac{\partial l(y_i,\vec{x}_i,\vec{c})}{\partial \vec{c}} \]
+\form#322:$G_m$
+\form#323:$ {m_{k_1, j_0}, m_{k_1, j_1} \ldots m_{k_1, j_{J-1}}, m_{k_2, j_0}, m_{k_2, j_1} \ldots m_{k_K, j_{J-1}}} $
+\form#324:$ y $
+\form#325:$X^{*}X$
+\form#326:\[ E[Y \mid \boldsymbol x] = \boldsymbol c^T \boldsymbol x \]
+\form#327:\[ f(y \mid \boldsymbol x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp\left(-\frac{1}{2 \sigma^2} \cdot (y - \boldsymbol x^T \boldsymbol c)^2 \right) \,. \]
+\form#328:$ \boldsymbol y \in \mathbf R^n $
+\form#329:$ X^T $
+\form#330:$ X^+ $
+\form#331:$ \sum_{i=1}^n \log f(y_i \mid \boldsymbol x_i) $
+\form#332:$ RSS $
+\form#333:\[ RSS = \sum_{i=1}^n ( y_i - \boldsymbol c^T \boldsymbol x_i )^2 = (\boldsymbol y - X \boldsymbol c)^T (\boldsymbol y - X \boldsymbol c) \,. \]
+\form#334:\[ \boldsymbol c = (X^T X)^+ X^T \boldsymbol y \,. \]
+\form#335:$ TSS $
+\form#336:$ ESS $
+\form#337:$ R^2 $
+\form#338:\begin{align*} ESS & = \boldsymbol y^T X \boldsymbol c - \frac{ \| y \|_1^2 }{n} \\ TSS & = \sum_{i=1}^n y_i^2 - \frac{ \| y \|_1^2 }{n} \\ R^2 & = \frac{ESS}{TSS} \end{align*}
+\form#339:$ R^2 = 1 - \frac{RSS}{TSS} $
+\form#340:$ TSS = RSS + ESS $
+\form#341:$ Var[Y - \boldsymbol c^T \boldsymbol x \mid \boldsymbol x] $
+\form#342:\[ \sigma^2 = \frac{RSS}{n - k} \]
+\form#343:\[ t_i = \frac{c_i}{\sqrt{\sigma^2 \cdot \left( (X^T X)^{-1} \right)_{ii} }} \,. \]
+\form#344:$ F_\nu $
+\form#345:\[ p_i = \Pr(|T| \geq |t_i|) = 2 \cdot (1 - F_{n - k}( |t_i| )) \]
+\form#346:$ \kappa(X) = \|X\|_2\cdot\|X^{-1}\|_2$
+\form#347:$X$
+\form#348:\[ \|X\|_2 = \sqrt{\lambda_{\max}\left(X^{*}X\right)}\ , \]
+\form#349:$X^{*}$
+\form#350:$ \mathit{se}(c_1), \dots, \mathit{se}(c_k) $
+\form#351:$ \boldsymbol t $
+\form#352:$ \boldsymbol p $
+\form#353:$ X^T X $
+\form#354:$ Y \in \{ 0,1 \} $
+\form#355:$ \boldsymbol y \in \{ 0,1 \}^n $
+\form#356:\[ P[Y = y_i | \boldsymbol x_i] = \sigma((-1)^{(1 - y_i)} \cdot \boldsymbol c^T \boldsymbol x_i) \,. \]
+\form#357:\[ l(\boldsymbol c) = -\sum_{i=1}^n \log(1 + \exp((-1)^{(1 - y_i)} \cdot \boldsymbol c^T \boldsymbol x_i)) \,. \]
+\form#358:$ \boldsymbol z $
+\form#359:$ \mathit{odds}(c_1), \dots, \mathit{odds}(c_k) $
+\form#360:$ X^T A X $
+\form#361:$ \frac{1}{1 + \exp(-x)} $
+\form#362:$ \exp(x) $
+\form#363:$ 2^{-1074} $
+\form#364:$ (1 + (1 - 2^{52})) * 2^{1023}) $
+\form#365:$ 1 + \exp(x) $
+\form#366:$ 2^{-52} $
+\form#367:$X_k$
+\form#368:$y \in \{0, 1\} $
+\form#369:\[ y = G(X' \beta), \]
+\form#370:$ G $
+\form#371:\[ P = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots \beta_j x_j)}} = \frac{1}{1 + e^{-z}} \implies \frac{\partial P}{\partial X_k} = \beta_k \cdot \frac{1}{1 + e^{-z}} \cdot \frac{e^{-z}}{1 + e^{-z}} \\ = \beta_k \cdot P \cdot (1-P) \]
+\form#372:\[ \frac{\partial y}{\partial x_k} = \beta_k \frac{\sum_{i=1}^n P(y_i = 1)(1-P(y_i = 1))}{n}, \\ \text{where}, P(y_i=1) = g(X^{(i)}\beta) \]
+\form#373:\[ S( \boldsymbol c) = B( \boldsymbol c) M( \boldsymbol c) B( \boldsymbol c) \]
+\form#374:$ B( \boldsymbol c)$
+\form#375:$ M( \boldsymbol c)$
+\form#376:$ B( \boldsymbol c) $
+\form#377:\[ B( \boldsymbol c) = n\left(\sum_i^n -H(y_i, x_i, \boldsymbol c) \right)^{-1} \]
+\form#378:\[ M_{H} =\frac{1}{n} \sum_i^n \psi(y_i,x_i, \boldsymbol c)^T \psi(y_i,x_i, \boldsymbol c). \]
+\form#379:$ M( \boldsymbol c) $
+\form#380:$M $
+\form#381:$ (ij) $
+\form#382:$ \boldsymbol n $
+\form#383:$ \boldsymbol m $
+\form#384:$ \boldsymbol n \times m $
+\form#385:$ \boldsymbol \beta $
+\form#386:$ \boldsymbol t \in \mathbf R^{m} $
+\form#387:$ X \in \mathbf R^{m} $
+\form#388:$ R(t_i) $
+\form#389:$ t_i $
+\form#390:\[ P[T_k = t_i | \boldsymbol R(t_i)] = \frac{e^{\beta^T x_k} }{ \sum_{j \in R(t_i)} e^{\beta^T x_j}}. \,. \]
+\form#391:\[ \mathcal L = \prod_{i = 1}^n \left( \frac{e^{\beta^T x_i}}{ \sum_{j \in R(t_i)} e^{\beta^T x_j}} \right). \]
+\form#392:\[ L = \sum_{i = 1}^n \left[ \beta^T x_i - \log\left(\sum_{j \in R(t_i)} e^{\beta^T x_j }\right) \right]. \]
+\form#393:\[ \mathit{se}(c_i) = \left( (H)^{-1} \right)_{ii} \,. \]
+\form#394:$ \kappa(H) $
+\form#395:$(10^8 / m)$
+\form#396:$l(\boldsymbol \beta)$
+\form#397:$ H_0 $
+\form#398:$ H_1 $
+\form#399:$ \Gamma $
+\form#400:$ \gamma_0 \in \Gamma_0 $
+\form#401:$ \Gamma_0 \subsetneq \Gamma $
+\form#402:$ \Gamma_0 $
+\form#403:$ X_1, \dots, X_n \sim N(\mu, \sigma^2) $
+\form#404:$ H_0 : \mu \leq 0 $
+\form#405:$ H_0 : \mu = 0 $
+\form#406:$ \bar x $
+\form#407:$ s^2 $
+\form#408:\[ t = \frac{\sqrt n \cdot \bar x}{s} \]
+\form#409:$ (n - 1) $
+\form#410:$ \Pr[\bar X \geq \bar x \mid \mu = 0] $
+\form#411:$ \Pr[\bar X \geq \bar x \mid \mu \leq 0] $
+\form#412:$ \Pr[ |\bar X| \geq |\bar x| \mid \mu = 0] $
+\form#413:$ \mu_0 $
+\form#414:$ y_1, \dots, y_m $
+\form#415:$ X_1, \dots, X_n \sim N(\mu_X, \sigma^2) $
+\form#416:$ Y_1, \dots, Y_m \sim N(\mu_Y, \sigma^2) $
+\form#417:$ \mu_X, \mu_Y, $
+\form#418:$ H_0 : \mu_X \leq \mu_Y $
+\form#419:$ H_0 : \mu_X = \mu_Y $
+\form#420:$ \bar x, \bar y $
+\form#421:$ s_X^2, s_Y^2 $
+\form#422:\[ t = \frac{\bar x - \bar y}{s_p \sqrt{1/n + 1/m}} \]
+\form#423:\[ s_p^2 = \frac{\sum_{i=1}^n (x_i - \bar x)^2 + \sum_{i=1}^m (y_i - \bar y)^2} {n + m - 2} \]
+\form#424:$ (n + m - 2) $
+\form#425:$ \Pr[\bar X - \bar Y \geq \bar x - \bar y \mid \mu_X = \mu_Y] $
+\form#426:$ \Pr[\bar X - \bar Y \geq \bar x - \bar y \mid \mu_X \leq \mu_Y] $
+\form#427:$ \Pr[ |\bar X - \bar Y| \geq |\bar x - \bar y| \mid \mu_X = \mu_Y] $
+\form#428:$ X_1, \dots, X_n \sim N(\mu_X, \sigma_X^2) $
+\form#429:$ Y_1, \dots, Y_m \sim N(\mu_Y, \sigma_Y^2) $
+\form#430:$ \mu_X, \mu_Y, \sigma_X^2, $
+\form#431:$ \sigma_Y^2 $
+\form#432:\[ t = \frac{\bar x - \bar y}{\sqrt{s_X^2/n + s_Y^2/m}} \]
+\form#433:\[ \frac{(s_X^2 / n + s_Y^2 / m)^2}{(s_X^2 / n)^2/(n-1) + (s_Y^2 / m)^2/(m-1)} \]
+\form#434:$ x_1, \dots, x_m $
+\form#435:$ y_1, \dots, y_n $
+\form#436:$ X_1, \dots, X_m \sim N(\mu_X, \sigma^2) $
+\form#437:$ Y_1, \dots, Y_n \sim N(\mu_Y, \sigma^2) $
+\form#438:$ H_0 : \sigma_X < \sigma_Y $
+\form#439:$ H_0 : \sigma_X = \sigma_Y $
+\form#440:\[ f = \frac{s_Y^2}{s_X^2} \]
+\form#441:$ (m - 1) $
+\form#442:$ \Pr[F \geq f \mid \sigma_X = \sigma_Y] $
+\form#443:$ \Pr[F \geq f \mid \sigma_X \leq \sigma_Y] $
+\form#444:$ 2 \cdot \min \{ p, 1 - p \} $
+\form#445:$ p = \Pr[ F \geq f \mid \sigma_X = \sigma_Y] $
+\form#446:$ n_1, \dots, n_k $
+\form#447:$ N = (N_1, \dots, N_k) $
+\form#448:$ p = (p_1, \dots, p_k) $
+\form#449:$ H_0 : p = p^0 $
+\form#450:$ n_i $
+\form#451:$ p^0_i $
+\form#452:$ p^0 = (\frac 1k, \dots, \frac 1k) $
+\form#453:$ (k - 1) $
+\form#454:$ n = \sum_{i=1}^n n_i $
+\form#455:\[ \chi^2 = \sum_{i=1}^k \frac{(n_i - np_i)^2}{np_i} \]
+\form#456:$ \Pr[X^2 \geq \chi^2 \mid p = p^0] $
+\form#457:$ \phi = \sqrt{\frac{\chi^2}{n}} $
+\form#458:$ \sqrt{\frac{\chi^2}{n + \chi^2}} $
+\form#459:$ X_1, \dots, X_m $
+\form#460:$ Y_1, \dots, Y_n $
+\form#461:$ F_X, F_Y $
+\form#462:$ H_0 : F_X = F_Y $
+\form#463:\[ d = \max_{t \in \mathbb R} |F_x(t) - F_y(t)| \]
+\form#464:$ F_x(t) := \frac 1m |\{ i \mid x_i \leq t \}| $
+\form#465:$ F_y $
+\form#466:$ k = (r + 0.12 + \frac{0.11}{r}) \cdot d $
+\form#467:$ r = \sqrt{\frac{m n}{m+n}}. $
+\form#468:$ d $
+\form#469:$ \Pr[D \geq d \mid F_X = F_Y] $
+\form#470:$ H_0 : \forall i,j: \Pr[X_i > Y_j] + \frac{\Pr[X_i = Y_j]}{2} = \frac 12 $
+\form#471:\[ z = \frac{u - \bar x}{\sqrt{\frac{mn(m+n+1)}{12}}} \]
+\form#472:$ u $
+\form#473:$ u = \min \{ u_x, u_y \} $
+\form#474:\[ u_x = mn + \binom{m+1}{2} - \sum_{i=1}^m r_{x,i} \]
+\form#475:\[ r_{x,i} = \{ j \mid x_j < x_i \} + \{ j \mid y_j < x_i \} + \frac{\{ j \mid x_j = x_i \} + \{ j \mid y_j = x_i \} + 1}{2} \]
+\form#476:$ m+n $
+\form#477:$ \Pr[Z \geq z \mid H_0] $
+\form#478:$ \Pr[|Z| \geq |z| \mid H_0] $
+\form#479:$ X_1, \dots, X_n $
+\form#480:$ \epsilon_i $
+\form#481:$ v_i $
+\form#482:$ v_{i-1} $
+\form#483:$ v_i - \epsilon_i \leq \max_{j=1, \dots, i-1} v_j + \epsilon_j $
+\form#484:$ w^+ = \sum_{i \mid x_i > 0} r_i $
+\form#485:$ w^- = \sum_{i \mid x_i < 0} r_i $
+\form#486:\[ r_i = \{ j \mid |x_j| < |x_i| \} + \frac{\{ j \mid |x_j| = |x_i| \} + 1}{2}. \]
+\form#487:$ w = \min \{ w^+, w^- \} $
+\form#488:$ w^+ $
+\form#489:$ w^- $
+\form#490:\[ z = \frac{w^+ - \frac{n(n+1)}{4}} {\sqrt{\frac{n(n+1)(2n+1)}{24} - \sum_{i=1}^n \frac{t_i^2 - 1}{48}}} \]
+\form#491:$ |x_i| $
+\form#492:$ \Pr[Z \geq z \mid \mu \leq 0] $
+\form#493:$ \Pr[ |Z| \geq |z| \mid \mu = 0] $
+\form#494:$ x_{1,1}, \dots, x_{1, n_1}, x_{2,1}, \dots, x_{2,n_2}, \dots, x_{k,n_k} $
+\form#495:$ X_{i,j} \sim N(\mu_i, \sigma^2) $
+\form#496:$ \mu_1, \dots, \mu_k $
+\form#497:$ H_0 : \mu_1 = \dots = \mu_k $
+\form#498:$ x_{i,j} $
+\form#499:$ n := \sum_{i=1}^k n_i $
+\form#500:$ \overline{x_i} $
+\form#501:$ s_i^2 $
+\form#502:$ \mathit{SS}_b = \sum_{i=1}^k n_i (\overline{x_i} - \bar x)^2. $
+\form#503:$ \mathit{SS}_w = \sum_{i=1}^k (n_i - 1) s_i^2. $
+\form#504:$ (k-1) $
+\form#505:$ (n-k) $
+\form#506:$ s_b^2 := \frac{\mathit{SS}_b}{k-1} $
+\form#507:$ s_w^2 := \frac{\mathit{SS}_w}{n-k} $
+\form#508:\[ f = \frac{s_b^2}{s_w^2}. \]
+\form#509:$ \Pr[ F \geq f \mid H_0] $
+\form#510:$\textit{tp}$
+\form#511:$\textit{tn}$
+\form#512:$\textit{fp}$
+\form#513:$\textit{fn}$
+\form#514:$\textit{tpr}=\textit{tp}/(\textit{tp}+\textit{fn})$
+\form#515:$\textit{tnr}=\textit{tn}/(\textit{fp}+\textit{tn})$
+\form#516:$\textit{ppv}=\textit{tp}/(\textit{tp}+\textit{fp})$
+\form#517:$\textit{npv}=\textit{tn}/(\textit{tn}+\textit{fn})$
+\form#518:$\textit{fpr}=\textit{fp}/(\textit{fp}+\textit{tn})$
+\form#519:$\textit{fdr}=1-\textit{ppv}$
+\form#520:$\textit{fnr}=\textit{fn}/(\textit{fn}+\textit{tp})$
+\form#521:$\textit{acc}=(\textit{tp}+\textit{tn})/(\textit{tp}+\textit{tn}+\textit{fp} +\textit{fn})$
+\form#522:$\textit{f1}=2*\textit{tp}/(2*\textit{tp}+\textit{fp}+\textit{fn})$
+\form#523:$\gamma$
+\form#524:$\exp(-\gamma||x-y||^2)$
+\form#525:$q$
+\form#526:$ (\langle x,y\rangle + q)^r $
+\form#527:$r$
+\form#528:$\epsilon$
+\form#529:\[ \underset{w,b}{\text{Minimize }} \lambda||w||^2 + \frac{1}{n}\sum_{i=1}^n \ell(y_i,f_{w,b}(x_i)) \]
+\form#530:$(x_1,y_1),\ldots,(x_n,y_n)$
+\form#531:$\ell(y,f(x))$
+\form#532:$\ell(y,f(x)) = \max(0,1-yf(x))$
+\form#533:$\ell(y,f(x)) = \max(0,|y-f(x)|-\epsilon)$
+\form#534:$ f_{w,b}(x) = \langle w, x\rangle + b$
+\form#535:\[ (1 - \phi(B)) Y_t = (1 + \theta(B)) Z_t, \]
+\form#536:$ t $
+\form#537:$ 1 $
+\form#538:$ X_t $
+\form#539:$ q $
+\form#540:$ \phi(B) $
+\form#541:$ \theta(B) $
+\form#542:$ Y_{t} $
+\form#543:$ Y_{t} = (1-B)^{d}(X_{t} - \mu) $
+\form#544:$ d>0 $
+\form#545:$ Z_t $
+\form#546:\[ \phi(B) Y_t= \phi_1 Y_{t-1} + \dots + \phi_{p} Y_{t-p} \]
+\form#547:\[ \theta(B) Z_t = \theta_{1} Z_{t-1} + \dots + \theta_{q} Z_{t-q}. \]
+\form#548:$\tau, \epsilon_1, \epsilon_2, \epsilon_3,$

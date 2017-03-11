@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['unsupervised_20learning',['Unsupervised Learning',['../group__grp__unsupervised.html',1,'']]],
-  ['utility_20functions',['Utility Functions',['../group__grp__utility__functions.html',1,'']]],
-  ['uniform_5fcdf',['uniform_cdf',['../prob_8sql__in.html#aa3a05f4f2e0ef9eb65e828261ecfbed9',1,'prob.sql_in']]],
-  ['uniform_5fpdf',['uniform_pdf',['../prob_8sql__in.html#ab90fa34d90a9c75747a34c3f210df239',1,'prob.sql_in']]],
-  ['uniform_5fquantile',['uniform_quantile',['../prob_8sql__in.html#a629587a0fdefb588d28b15517ae5cc04',1,'prob.sql_in']]],
-  ['utilities_2esql_5fin',['utilities.sql_in',['../utilities_8sql__in.html',1,'']]],
-  ['utils_5fnormalize_5fdata',['utils_normalize_data',['../utils__regularization_8sql__in.html#a3dc216dff38a6d033020af2f7440e66d',1,'utils_regularization.sql_in']]],
-  ['utils_5fregularization_2esql_5fin',['utils_regularization.sql_in',['../utils__regularization_8sql__in.html',1,'']]],
-  ['utils_5fvar_5fscales',['utils_var_scales',['../utils__regularization_8sql__in.html#aaae98ce639cd126a308ed4604ac364a9',1,'utils_regularization.sql_in']]]
+  ['vcrf_5flabel',['vcrf_label',['../viterbi_8sql__in.html#a05e8e687442b8f8618738d34010ef68d',1,'viterbi.sql_in']]],
+  ['vcrf_5ftop1_5flabel',['vcrf_top1_label',['../viterbi_8sql__in.html#a77b62d01f74a7bd206f6954c82638ba7',1,'viterbi.sql_in']]],
+  ['vcrf_5ftop1_5ftable',['vcrf_top1_table',['../viterbi_8sql__in.html#a1471ce51491126b282ed8f9a2ac38b25',1,'viterbi.sql_in']]],
+  ['vectorized_5fdistribution_5fagg',['vectorized_distribution_agg',['../distribution_8sql__in.html#aa4608a56578c7e93615e6d5b558d0bf9',1,'distribution.sql_in']]],
+  ['vectorized_5fdistribution_5ffinal',['vectorized_distribution_final',['../distribution_8sql__in.html#a6bca924e0d2a49b101253f3ca9dc4a58',1,'distribution.sql_in']]],
+  ['vectorized_5fdistribution_5ftransition',['vectorized_distribution_transition',['../distribution_8sql__in.html#abc7f8816bbdb1467435e5ba17a7d08f1',1,'distribution.sql_in']]],
+  ['version',['version',['../utilities_8sql__in.html#a9ce7ffa76acc8a0638e9bc48be99f36a',1,'utilities.sql_in']]],
+  ['viterbi_2esql_5fin',['viterbi.sql_in',['../viterbi_8sql__in.html',1,'']]]
 ];

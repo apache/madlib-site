@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table_5fto_5fpmml_2esql_5fin',['table_to_pmml.sql_in',['../table__to__pmml_8sql__in.html',1,'']]],
-  ['text_5futilities_2esql_5fin',['text_utilities.sql_in',['../text__utilities_8sql__in.html',1,'']]]
+  ['utilities_2esql_5fin',['utilities.sql_in',['../utilities_8sql__in.html',1,'']]],
+  ['utils_5fregularization_2esql_5fin',['utils_regularization.sql_in',['../utils__regularization_8sql__in.html',1,'']]]
 ];

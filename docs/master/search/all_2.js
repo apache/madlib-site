@@ -8,6 +8,7 @@ var searchData=
   ['beta_5fpdf',['beta_pdf',['../prob_8sql__in.html#aa105049e6e3bb9b3891b0ed1b343e28e',1,'prob.sql_in']]],
   ['beta_5fquantile',['beta_quantile',['../prob_8sql__in.html#a32433aa742c0504d33e98e28a3e2f190',1,'prob.sql_in']]],
   ['big_5for',['big_or',['../sketch_8sql__in.html#a335fba86bbb3fb5a3284808cc64b8f16',1,'sketch.sql_in']]],
+  ['binary_5fclassifier',['binary_classifier',['../pred__metrics_8sql__in.html#aedc849fa15c7c788cf17bb74244082a0',1,'binary_classifier(text table_in, text table_out, text prediction_col, text observed_col, text grouping_cols):&#160;pred_metrics.sql_in'],['../pred__metrics_8sql__in.html#a41dff9da82f7a1a421ed58f183eb6651',1,'binary_classifier(text table_in, text table_out, text prediction_col, text observed_col):&#160;pred_metrics.sql_in'],['../pred__metrics_8sql__in.html#afe32ecfa017b25b544654bf3c5836efc',1,'binary_classifier(text message):&#160;pred_metrics.sql_in'],['../pred__metrics_8sql__in.html#a1687dbb9561ff60738a1549a37c1fe73',1,'binary_classifier():&#160;pred_metrics.sql_in']]],
   ['binomial_5fcdf',['binomial_cdf',['../prob_8sql__in.html#aa5000bad6e2e4af1c8cbfec7ea884476',1,'prob.sql_in']]],
   ['binomial_5fpmf',['binomial_pmf',['../prob_8sql__in.html#aa0614475b8685bf8e37533d2ac5bb116',1,'prob.sql_in']]],
   ['binomial_5fquantile',['binomial_quantile',['../prob_8sql__in.html#a49f421c58d2e1abd63b83d71af9edf21',1,'prob.sql_in']]],
