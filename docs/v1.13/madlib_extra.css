@@ -1,0 +1,156 @@
+/* MADlib CSS customizations */
+
+/* Indent paragraphs in the main text, but not in framed boxes */
+div.contents > p, div.contents > pre, div.contents > ul, div.contents > div.fragment, dd {
+    margin-left: 20px;
+}
+
+/* Increase spacing between titled paragraphs in the main text, but not in
+   framed boxes */
+div.contents > dl {
+    margin-top: 2em;
+}
+
+/* Increase spacing between list items in the main text */
+div.contents li {
+    margin-top: 1em;
+}
+
+/* No automtic line wrapping at white spaces in <pre> or \verbatim
+   environments. */
+pre.fragment {
+    word-wrap: normal;
+}
+
+/* Distinguish backgrounds for syntax, example commands, and results */
+pre.syntax {
+        border: 1px solid #999999;
+        color: #00004D;
+        background-color: #CBD4E7;
+        padding: 4px 6px;
+        margin: 4px 8px 4px 2px;
+        overflow: auto;
+        word-wrap: normal;
+        font-size:  9pt;
+        line-height: 125%;
+        font-family: monospace, fixed;
+        font-size: 105%;
+}
+
+pre.example {
+        border: 1px solid #999999;
+        background-color: #E8E8E8;
+        padding: 4px 6px;
+        margin: 4px 8px 4px 2px;
+        overflow: auto;
+        word-wrap: normal;
+        font-size:  9pt;
+        line-height: 125%;
+        font-family: monospace, fixed;
+        font-size: 105%;
+}
+
+pre.result {
+        border: 1px solid #999999;
+        background-color: #FFFFCC;
+        padding: 4px 6px;
+        margin: 4px 8px 4px 2px;
+        overflow: auto;
+        word-wrap: normal;
+        font-size:  9pt;
+        line-height: 125%;
+        font-family: monospace, fixed;
+        font-size: 105%;
+}
+
+
+/* No padding for paragraph headers (in its infinite wisdom, doxygen uses <dl>
+   environments for that) */
+dl {
+    padding-left: 0;
+    margin-top: 1em;
+}
+
+/* Increase the font size for paragraph headers */
+dt {
+    font-size: 120%;
+    margin-bottom: 1em;
+}
+
+/* The first column should align with normal text. So we cannot use
+   border-spacing. */
+table.params {
+    border-spacing: 0;
+}
+
+/* Add some padding instead of border-spacing */
+td.paramname {
+    padding: 1px 1em 1px 0;
+}
+
+/* We move the bar a out of the text frame, so that the text aligns well with
+   the rest. Note: margin-left + border-width-left + padding-left = 0 */
+/* dl.note, dl.warning, dl.attention, dl.pre, dl.post, dl.invariant, dl.deprecated, dl.todo, dl.test, dl.bug
+{
+    margin-left: -6px;
+    padding-left: 2px;
+}
+*/
+
+/* Style parameter lists formatted with definition lists. */
+dl.arglist {
+  margin-left: 40px;
+  margin-top: 0px;
+}
+
+dl.arglist dt {
+  font-size: 100%;
+  font-weight: bold;
+  color: #00004D;
+  margin-bottom: 0px;
+}
+
+div.toc {
+    background-color: #FFF5B8;
+}
+
+/* Increase font size for toc.li from 10px to 14px */
+div.toc li {
+        font: 14px/1.4 Verdana,DejaVu Sans,Geneva,sans-serif;
+        margin-top: 5px;
+        padding-left: 10px;
+        padding-top: 2px;
+}
+
+
+div.versionlist li.head {
+  font: 12px/1.2 Verdana, DejaVu Sans, Geneva, sans-serif;
+  display: inline;
+  margin-right: 10px;
+}
+
+div.versionlist ul {
+  display: inline;
+  align: right;
+}
+
+div.versionlist li {
+  font: 10px/1.2 Verdana,DejaVu Sans,Geneva,sans-serif;
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Table style for output table columns and descriptions */
+table.output {
+  border: 0;
+  margin-left: 20px;
+}
+
+.output th {
+  text-align: right;
+  vertical-align: top;
+  padding-right: 15px;
+  font-weight: normal;
+  color: #354C7B;
+ }
+
