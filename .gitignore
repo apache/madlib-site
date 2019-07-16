@@ -1,0 +1,19 @@
+# Ignore generated code files
+*.so
+*.o
+*.pyc
+
+ # Meta data of Mac OS X's Finder.app
+.DS_Store
+
+# tags
+/cscope.files
+/refresh_index.sh
+/tags*
+.tags*
+
+# project files
+.predictive
+.Rhistory
+eproject.cfg
+*.project.vim
