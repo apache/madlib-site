@@ -54,7 +54,7 @@
 #     2a. Perform parallel image loading from numpy arrays:
 #
 #           iloader.load_dataset_from_np(data_x, data_y, table_name,
-#                                        append=False, no_temp_files=False)
+#                                        append=False)
 #
 #       data_x contains image data in np.array format, and data_y is a 1D np.array
 #           of the image categories (labels).
@@ -73,18 +73,12 @@
 #           name instead.  This avoids needing to pass the table_name again every
 #           time, but also allows it to be changed at any time.
 #
-#       EXPERIMENTAL:  If no_temp_files=True, the operation will happen without
-#                      writing out the tables to temporary files before loading them.
-#                      Instead, an in-memory filelike buffer (StringIO) will be used
-#                      to build the tables before loading.  Currently not working,
-#                      for unknown reason.
-#
 #  or,
 #
 #     2b. Perform parallel image loading from disk:
 #
 #           load_dataset_from_disk(self, root_dir, table_name, num_labels='all',
-#               append=False, no_temp_files=False):
+#               append=False):
 #
 #       Calling this function instead will look in root_dir on the local disk of
 #           wherever this is being run.  It will skip over any files in that
@@ -93,7 +87,7 @@
 #           where the name of each subdirectory is the label for the images
 #           contained within it.
 #
-#       The table_name, append, and no_temp_files parameters are the same as
+#       The table_name and append parameters are the same as described
 #           above.  num_labels is an optional parameter which can be used to
 #           restrict the number of labels (image classes) loaded, even if more
 #           are found in root_dir.  For example, for a large dataset you may
@@ -107,7 +101,7 @@
 #
 # usage: madlib_image_loader.py [-h] [-r ROOT_DIR] [-n NUM_LABELS] [-d DB_NAME]
 #                               [-a] [-w NUM_WORKERS] [-p PORT] [-U USERNAME]
-#                               [-t HOST] [-P PASSWORD] [-m]
+#                               [-t HOST] [-P PASSWORD]
 #                               table_name
 #
 # positional arguments:
@@ -247,7 +241,7 @@ class ImageLoader:
         self.table_name = table_name
         self.root_dir = None
         self.pool = None
-        self.no_temp_files = None
+        self.no_temp_files = False
 
         global iloader  # Singleton per process
         iloader = self
@@ -435,7 +429,7 @@ class ImageLoader:
         self.db_close()
 
     def load_dataset_from_np(self, data_x, data_y, table_name=None,
-                             append=False, no_temp_files=False):
+                             append=False):
         """
         Loads a numpy array into db.  For append=False, creates a new table and
             loads the data.  For append=True, appends data to existing table.
@@ -450,14 +444,12 @@ class ImageLoader:
         @table_name Name of table in db to load data into
         @append Whether to create a new table (False) or append to an existing
             one (True).  If unspecified, default is False
-        @no_temp_files If specified, no temporary files are written--all
-            operations are performed in-memory.
-
         """
         start_time = time.time()
         self.mother = True
         self.from_disk = False
         self.append = append
+
         if table_name:
             self.table_name = table_name
 
@@ -477,7 +469,7 @@ class ImageLoader:
                      initargs=(current_process().pid,
                                self.table_name,
                                self.append,
-                               no_temp_files,
+                               False,
                                self.db_creds,
                                False))
 
@@ -539,7 +531,7 @@ class ImageLoader:
             _call_np_worker(data)
 
     def load_dataset_from_disk(self, root_dir, table_name, num_labels='all',
-                               append=False, no_temp_files=False):
+                               append=False):
         """
         Load images from disk into a greenplum database table. All the images
             should be of the same shape.
@@ -553,13 +545,11 @@ class ImageLoader:
             which images will be loaded.
         @append: If set to true, do not create a new table but append to an
             existing table.
-        @no_temp_files: EXPERIMENTAL.  Handle table creation in-memory, don't
-            write any temp files. (Not working in current testing; unknown why.)
         """
         start_time = time.time()
         self.mother = True
         self.append = append
-        self.no_temp_files = no_temp_files
+        self.no_temp_files = False
         self.table_name = table_name
         self.from_disk = True
         self._validate_input_and_create_table()
@@ -651,10 +641,11 @@ def main():
                         dest='password', default=None,
                         help='database user password')
 
-    parser.add_argument('-m', '--no-temp-files', action='store_true',
-                        dest='no_temp_files', default=False,
-                        help="no temporary files, construct all image tables "
-                             " in-memory")
+#   This option is not working yet
+#    parser.add_argument('-m', '--no-temp-files', action='store_true',
+#                        dest='no_temp_files', default=False,
+#                        help="no temporary files, construct all image tables "
+#                             " in-memory")
 
     parser.add_argument('table_name',
                         help='Name of table where images should be loaded')
@@ -669,8 +660,7 @@ def main():
     iloader.load_dataset_from_disk(args.root_dir,
                                    args.table_name,
                                    args.num_labels,
-                                   args.append,
-                                   args.no_temp_files)
+                                   args.append)
 
 if __name__ == '__main__':
     main()
