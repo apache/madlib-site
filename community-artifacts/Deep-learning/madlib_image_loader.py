@@ -6,10 +6,11 @@
 # The format of the image tables created will have at least 3 columns:
 #     (id SERIAL, x REAL[], y).  Each row is 1 image,
 #     with image data represented by x (a 3D array of type "real"), and
-#     y (category) as text.  id is just a unique identifier for each image,
-#     so they don't get mixed up during prediction.  If images are being
-#     loaded from disk, there will be an additional img_name column containing
-#     the filename of the image, to help identify later.
+#     y (category) as text or 3D array of numeric type(int[], real[], etc).
+#     id is just a unique identifier for each image, so they don't get
+#     mixed up during prediction.  If images are being loaded from disk,
+#     there will be an additional img_name column containing the filename
+#     of the image, to help identify later.
 #
 #   ImageLoader.ROWS_PER_FILE = 1000 by default; this is the number of rows per
 #      temporary file (or StringIO buffer) loaded at once.
@@ -54,7 +55,7 @@
 #     2a. Perform parallel image loading from numpy arrays:
 #
 #           iloader.load_dataset_from_np(data_x, data_y, table_name,
-#                                        append=False)
+#                                        append=False, label_datatype='TEXT')
 #
 #       data_x contains image data in np.array format, and data_y is a 1D np.array
 #           of the image categories (labels).
@@ -73,12 +74,15 @@
 #           name instead.  This avoids needing to pass the table_name again every
 #           time, but also allows it to be changed at any time.
 #
+#       label_datatype is used for defining the datatype for y(label) in the output
+#           table, where y is a numeric array. Default datatype for y is TEXT
+#
 #  or,
 #
 #     2b. Perform parallel image loading from disk:
 #
 #           load_dataset_from_disk(self, root_dir, table_name, num_labels='all',
-#               append=False):
+#               append=False, label_datatype='TEXT'):
 #
 #       Calling this function instead will look in root_dir on the local disk of
 #           wherever this is being run.  It will skip over any files in that
@@ -93,6 +97,9 @@
 #           are found in root_dir.  For example, for a large dataset you may
 #           have hundreds of labels, but only wish to use a subset of that
 #           containing a few dozen.
+#
+#       label_datatype is used for defining the datatype for y(label) in the output
+#           table, where y is a numeric array. Default datatype for y is TEXT
 #
 #
 # If you want to load an image dataset from disk, but don't feel like writing
@@ -119,6 +126,10 @@
 #                         (default: madlib)
 #   -a, --append          Name of database where images should be loaded
 #                         (default: False)
+#   -l LABEL_DATATYPE, --label-datatype LABEL_DATATYPE
+#                         SQL datatype of label column in output table for
+#                         numeric arrays
+#                         Example: INT, REAL, BIGINT (default: TEXT)
 #   -w NUM_WORKERS, --num-workers NUM_WORKERS
 #                         Name of parallel workers. (default: 5)
 #   -p PORT, --port PORT  database server port (default: 5432)
@@ -322,9 +333,13 @@ class ImageLoader:
         for i, row in enumerate(data):
             if len(row) == 3:
                 x, y, image_name = row
+                if not self.from_disk and y.ndim > 1:
+                    y = f(y)
                 yield '{0}|{1}|{2}\n'.format(f(x), y, image_name)
             elif len(row) == 2:
                 x, y = row
+                if not self.from_disk and y.ndim > 1:
+                    y = f(y)
                 yield '{0}|{1}\n'.format(f(x), y)
             else:
                 raise RuntimeError("Cannot write invalid row to table:\n{0}"\
@@ -407,14 +422,15 @@ class ImageLoader:
             print "Appending to table {0} in {1} db".format(self.table_name,
                                                             self.db_creds.db_name)
         else:
+            y_type = self.label_datatype
             # Create new table
             try:
                 if self.from_disk:
-                    sql = "CREATE TABLE {0} (id SERIAL, x REAL[], y TEXT,\
-                        img_name TEXT)".format(self.table_name)
+                    sql = "CREATE TABLE {0} (id SERIAL, x REAL[], y {1},\
+                        img_name TEXT)".format(self.table_name, y_type)
                 else:
-                    sql = "CREATE TABLE {0} (id SERIAL, x REAL[], y TEXT)"\
-                        .format( self.table_name)
+                    sql = "CREATE TABLE {0} (id SERIAL, x REAL[], y {1})"\
+                        .format( self.table_name, y_type)
                 self.db_exec(sql)
             except db.DatabaseError as e:
                 raise RuntimeError("{0} while creating {1} in db {2}.\n"
@@ -429,7 +445,7 @@ class ImageLoader:
         self.db_close()
 
     def load_dataset_from_np(self, data_x, data_y, table_name=None,
-                             append=False):
+                             append=False, label_datatype='TEXT'):
         """
         Loads a numpy array into db.  For append=False, creates a new table and
             loads the data.  For append=True, appends data to existing table.
@@ -444,11 +460,14 @@ class ImageLoader:
         @table_name Name of table in db to load data into
         @append Whether to create a new table (False) or append to an existing
             one (True).  If unspecified, default is False
+        @label_datatype: If set will create table with the the column 'y' set
+            to the datatype specified. Default is set to TEXT
         """
         start_time = time.time()
         self.mother = True
         self.from_disk = False
         self.append = append
+        self.label_datatype = label_datatype
 
         if table_name:
             self.table_name = table_name
@@ -457,9 +476,16 @@ class ImageLoader:
             raise ValueError("Must specify table_name either in ImageLoader"
                 " constructor or in load_dataset_from_np params!")
 
+        # Flatten labels only for arrays with shape (n,1) o (1,n) since these
+        # shapes can be treated as individual labels
+        if data_y.ndim == 2 and (data_y.shape[0] == 1 or data_y.shape[1] == 1):
+            data_y = data_y.flatten()
+        else:
+            self.label_datatype = self.label_datatype + '[]'
+
+
         self._validate_input_and_create_table(data_x, data_y)
 
-        data_y = data_y.flatten()
         data = zip(data_x, data_y)
 
         if not self.pool:
@@ -531,7 +557,7 @@ class ImageLoader:
             _call_np_worker(data)
 
     def load_dataset_from_disk(self, root_dir, table_name, num_labels='all',
-                               append=False):
+                               append=False, label_datatype='TEXT'):
         """
         Load images from disk into a greenplum database table. All the images
             should be of the same shape.
@@ -545,12 +571,15 @@ class ImageLoader:
             which images will be loaded.
         @append: If set to true, do not create a new table but append to an
             existing table.
+        @label_datatype: If set will create table with the the column 'y' set
+            to the datatype specified. Default is set to TEXT
         """
         start_time = time.time()
         self.mother = True
         self.append = append
         self.no_temp_files = False
         self.table_name = table_name
+        self.label_datatype = label_datatype
         self.from_disk = True
         self._validate_input_and_create_table()
 
@@ -619,7 +648,11 @@ def main():
 
     parser.add_argument('-a', '--append', action='store_true',
                         dest='append', default=False,
-                        help='Name of database where images should be loaded')
+                        help='Insert into existing table or Create new table')
+
+    parser.add_argument('-l', '--label-datatype', action='store',
+                        dest='label_datatype', default='TEXT',
+                        help='SQL datatype(INT, REAL, BIGINT) of label column in output table')
 
     parser.add_argument('-w', '--num-workers', action='store',
                         dest='num_workers', default=5,
@@ -660,7 +693,8 @@ def main():
     iloader.load_dataset_from_disk(args.root_dir,
                                    args.table_name,
                                    args.num_labels,
-                                   args.append)
+                                   args.append,
+                                   args.label_datatype)
 
 if __name__ == '__main__':
     main()
