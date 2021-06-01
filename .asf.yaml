@@ -1,0 +1,8 @@
+# asf-staging branch will show up at https://madlib.staged.apache.org
+staging:
+  profile: ~
+  whoami:  asf-staging
+
+# asf-site branch will show up at https://madlib.apache.org
+publish:
+  whoami:  asf-site
