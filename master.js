@@ -43,6 +43,15 @@ init = {
 			}
 			return false;
 		});
+	},
+	asflinksSelect: function() {
+		jQuery('#latest-asflinks').on('change', function() {
+			var url = jQuery(this).val();
+			if (url) {
+				window.location = url;
+			}
+			return false;
+		});
 	}
 };
 
