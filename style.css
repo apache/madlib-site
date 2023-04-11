@@ -1256,52 +1256,9 @@ body {
   overflow: hidden;
   width: 175px;
 }
-
-.li-asflinks {
-  display: inline-block;
-  border: none
-  border-bottom: none
-  overflow: hidden;
-  background: #f15722;
-  color: white;
-}
-
-.select-asflinks {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  display: inline-block;
-  border: 1px solid #c5d7e0;
-  border-bottom: 2px solid #c5d7e0;
-  background: transparent;
-  overflow: hidden;
-  width: 175px;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  color: #6f9db2;
-}
-
 .select-documentation.point-down:after {
   right: 6px;
 }
-
-.select-asflinks select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  display: inline-block;
-  border: 1px solid #c5d7e0;
-  border-bottom: 2px solid #c5d7e0;
-  background: transparent;
-  overflow: hidden;
-  width: 175px;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  color: #6f9db2;
-}
-
 .select-documentation select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1315,12 +1272,7 @@ body {
   text-overflow: "";
   width: 130%;
 }
-
 .select-documentation select:focus {
-  outline: none;
-}
-
-.select-asflinks select:focus {
   outline: none;
 }
 
