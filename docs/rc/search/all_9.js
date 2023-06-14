@@ -31,6 +31,6 @@ var searchData=
   ['inverse_5fgamma_5fquantile',['inverse_gamma_quantile',['../prob_8sql__in.html#a5876aae01f14729866d4fd52918a65ba',1,'prob.sql_in']]],
   ['is_5fpg_5fmajor_5fversion_5fless_5fthan',['is_pg_major_version_less_than',['../utilities_8sql__in.html#af4627d77d237aeadaa4b43ff168ae322',1,'utilities.sql_in']]],
   ['is_5ftable_5funlogged',['is_table_unlogged',['../utilities_8sql__in.html#aaaf5ac0d3f6416b4bb093fd17c5c2a14',1,'utilities.sql_in']]],
-  ['is_5fver_5fgreater_5fthan_5fgp_5f640_5for_5fpg_5f11',['is_ver_greater_than_gp_640_or_pg_11',['../utilities_8sql__in.html#a4df02278e7bba3e42a6eab87597e4ea8',1,'utilities.sql_in']]],
+  ['is_5fver_5fgp_5f640_5f700_5for_5fpg_5f11',['is_ver_gp_640_700_or_pg_11',['../utilities_8sql__in.html#a6b3dc37fb176354ce007fbd9a1cd107d',1,'utilities.sql_in']]],
   ['isnan',['isnan',['../utilities_8sql__in.html#a48bed63cab78a5446fa4c122eaae3a40',1,'utilities.sql_in']]]
 ];
