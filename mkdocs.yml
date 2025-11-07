@@ -1,0 +1,150 @@
+site_name: Apache MADlib
+site_url: https://madlib.apache.org
+site_description: Apache MADlib - Big Data Machine Learning in SQL
+site_author: Apache MADlib PMC
+
+repo_name: apache/madlib
+repo_url: https://github.com/apache/madlib
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/madlib.svg
+  favicon: assets/favicon.icon
+  icon:
+    repo: fontawesome/brands/github
+  
+  palette:
+      # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: amber
+      toggle:
+        icon: material/brightness-6
+        name: Switch to dark mode
+    
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.instant
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+#    - content.code.copy
+#    - content.action.edit
+#    - content.action.view
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/apache/madlib
+      name: mirror of Apache MADlib
+    - icon: fontawesome/solid/envelope
+      link: mailto:user-subscribe@madlib.apache.org
+      name: subscribe to Apache MADlib user mailing list
+    - icon: fontawesome/brands/slack
+      link: https://apache-cloudberry.slack.com
+      name: join the MADlib channel
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+copyright: Copyright &copy; 2025 The Apache Software Foundation, Licensed under the Apache License, Version 2.0. Apache, Apache MADlib, the Apache feather and the MADlib logo are trademarks of The Apache Software Foundation.
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Documentation:
+    - documentation/index.md
+    - Installation Guide: documentation/installation.md
+    - Quick Start: documentation/quick-start.md
+    - Example Use Cases: documentation/examples.md
+    - All Versions: documentation/versions.md
+  - API Reference:
+    - api/index.md
+    - Latest (v2.1.0): api/latest/index.md
+    - Version 2.1.0: api/v2.1.0/index.md
+    - Version 2.0.0: api/v2.0.0/index.md
+  - Community:
+    - community/index.md
+    - Contributing: community/contributing.md
+    - Developer Resources: community/developers.md
+    - Research Papers: community/research.md
+  - Blog:
+    - blog/index.md
+  - Download: download.md
+  - Team:
+    - team/index.md
+    - Project History: team/history.md
+  - ASF:
+    - asf/index.md
+
+plugins:
+  - search:
+      lang: en
+  - blog:
+      blog_dir: blog
+      post_dir: blog/posts
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_readtime: false
+      archive: false
+      categories: false
+      categories_allowed:
+        - Release
+        - Community
+        - Announcement
+        - Event
+      authors_file: "{blog}/authors.yml"
+      pagination_format: "~2~"
+  - privacy

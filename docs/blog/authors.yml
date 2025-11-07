@@ -1,0 +1,6 @@
+authors:
+  madlib-team:
+    name: Apache MADlib
+    description: Apache MADlib
+    avatar: ../assets/madlib.svg
+    url: https://github.com/apache/madlib

@@ -1,0 +1,149 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+# publish-madlib-site.yml
+#
+# This workflow builds and publishes the Apache MADlib website to
+# madlib.apache.org.
+# The site is built using MkDocs and published to the asf-site branch,
+# which Apache infrastructure then serves at madlib.apache.org
+#
+# Triggered by:
+# - Push to master branch: Builds and publishes to asf-site
+# - Pull requests: Builds only (no publish) to verify changes
+#
+# Requirements:
+# - Python project with MkDocs and Material theme
+# - .asf.yaml file in repository root
+#
+# Notes:
+# - Publication only occurs on push events, not pull requests
+# - The asf-site branch is protected - only this workflow should modify it
+# - Build artifacts are placed in ./site directory
+
+name: Publish MADlib Site
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Cache MkDocs dependencies
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: ~/.cache 
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install MkDocs and Material theme
+        run: |
+          echo "📦 Installing MkDocs and Material theme..."
+          pip install mkdocs mkdocs-material
+
+      - name: Build site
+        run: |
+          echo "🏗️ Building MkDocs site..."
+          mkdocs build 2>&1 | tee build.log
+          echo "✅ Build completed"
+
+      - name: Check for broken links in build
+        id: link-check
+        run: |
+          echo "🔍 Checking for broken internal links..."
+          
+          # Check if build.log exists
+          if [ ! -f build.log ]; then
+            echo "❌ build.log file not found!"
+            echo "has_link_errors=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Display some build.log content for debugging
+          echo "📄 Build log contains $(wc -l < build.log) lines"
+          echo "🔍 Searching for link errors..."
+          
+          # Search for error patterns (MkDocs might report different errors than Docusaurus)
+          if grep -i "error\|warning\|broken" build.log | grep -i "link\|reference\|anchor"; then
+            echo "❌ Found potential link issues!"
+            
+            # Save all possible link errors to temporary file
+            grep -i "error\|warning\|broken" build.log | grep -i "link\|reference\|anchor" > link_errors.txt || true
+                                                               
+            # Write to Summary
+            {
+              echo "## 🔗 Issues Found"
+              echo ""
+              echo "The following issues were detected during the MkDocs build:"
+              echo ""
+              echo '```'
+              cat link_errors.txt
+              echo '```'
+            } >> $GITHUB_STEP_SUMMARY
+            
+            echo "has_link_errors=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No obvious link issues found"
+            
+            # Write success information to Summary
+            {
+              echo "## ✅ Build Check Passed"
+              echo ""
+              echo "Site built successfully with no obvious link errors!"
+            } >> $GITHUB_STEP_SUMMARY
+            
+            echo "has_link_errors=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Copy ASF config
+        run: cp .asf.yaml site/.asf.yaml
+
+      # Deploy to asf-site for production
+      - name: Deploy to production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: asf-site
+          
+      # Final step: fail if there were link errors
+      - name: Report check results
+        if: always()
+        run: |
+          if [[ "${{ steps.link-check.outputs.has_link_errors }}" == "true" ]]; then
+            echo "❌ Workflow completed but with issues detected!"
+            echo "Please fix the issues before merging."
+            echo "Check the Summary tab above for detailed error information."
+            exit 1
+          else
+            echo "✅ All checks passed successfully!"
+          fi

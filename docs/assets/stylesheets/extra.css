@@ -1,0 +1,215 @@
+/* Custom styles for Apache MADlib site */
+
+/* Logo switching for dark mode */
+/* Light mode - use SVG logo for header */
+[data-md-color-scheme="default"] .md-header__button.md-logo img,
+[data-md-color-scheme="default"] .md-logo img {
+  content: url('../madlib.svg');
+}
+
+/* Dark mode - use watermark PNG logo for header */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img,
+[data-md-color-scheme="slate"] .md-logo img {
+  content: url('../madlib-watermark.png');
+}
+
+/* Hero logo switching for dark mode */
+/* Light mode - use SVG logo */
+[data-md-color-scheme="default"] .hero-logo {
+  content: url('../madlib.svg');
+}
+
+/* Dark mode - use watermark PNG logo */
+[data-md-color-scheme="slate"] .hero-logo {
+  content: url('../madlib-watermark.png');
+}
+
+/* Hero section styling */
+.hero-center {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.hero-center h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-center img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Latest news banner */
+.latest-news-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.latest-news-banner h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.latest-news-banner p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.latest-news-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.latest-news-banner a:hover {
+  opacity: 0.8;
+}
+
+.latest-news-banner .news-date {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Latest news section - Light mode */
+[data-md-color-scheme="default"] .latest-news-light {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+[data-md-color-scheme="default"] .latest-news-light h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+[data-md-color-scheme="default"] .latest-news-light h3 a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="default"] .latest-news-light h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Latest news section - Dark mode */
+[data-md-color-scheme="slate"] .latest-news-light {
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #8b9ff5;
+  color: #e0e0e0;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+[data-md-color-scheme="slate"] .latest-news-light h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+[data-md-color-scheme="slate"] .latest-news-light h3 a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .latest-news-light h3 a:hover {
+  text-decoration: underline;
+  color: #fbbf24;
+}
+
+/* Homepage specific styles - Feature cards with icons */
+.homepage-content .grid.cards img[align="left"] {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 8px;
+}
+
+/* Homepage specific styles - Center main section headings */
+.homepage-content h2 {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+}
+
+.homepage-content h3 {
+  text-align: center;
+  margin: 2rem 0 1.5rem 0;
+}
+
+/* Homepage specific styles - Center text content */
+.homepage-content .text-center {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.homepage-content .text-center p {
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .hero-center h1 {
+    font-size: 2rem;
+  }
+
+  .hero-center img {
+    width: 250px;
+  }
+
+  .latest-news-banner,
+  .latest-news-light {
+    padding: 1rem 1.5rem;
+  }
+
+  .homepage-content .grid.cards img[align="left"] {
+    width: 48px !important;
+    margin-right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-center h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-center img {
+    width: 200px;
+  }
+
+  .latest-news-banner,
+  .latest-news-light {
+    padding: 1rem;
+  }
+
+  .homepage-content .grid.cards img[align="left"] {
+    width: 40px !important;
+    margin-right: 0.5rem;
+  }
+}
