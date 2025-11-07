@@ -1,2 +1,0 @@
-ErrorDocument 500 http://madlib.incubator.apache.org
-ErrorDocument 404 http://madlib.incubator.apache.org

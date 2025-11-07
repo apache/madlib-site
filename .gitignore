@@ -3,7 +3,7 @@
 *.o
 *.pyc
 
- # Meta data of Mac OS X's Finder.app
+# Meta data of Mac OS X's Finder.app
 .DS_Store
 
 # tags
@@ -17,3 +17,19 @@
 .Rhistory
 eproject.cfg
 *.project.vim
+
+# MkDocs build output
+site/
+.cache/
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
